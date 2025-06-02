@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Bucket List</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Travel Bucket List</h1>
+    <nav class="header-nav">
+      <a href="index.html">Home</a> |
+      <a href="wishlist.html">Wishlist</a>
+    </nav>
+  </header>
+
+  <!-- New: content-wrapper holds the sidebar + actual main content -->
+  <div class="content-wrapper">
+
+    <!-- New: Sidebar for desktop -->
+    <aside class="sidebar">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="wishlist.html">Wishlist</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </aside>
+
+    <!-- Existing main content moves inside .main-content -->
+    <section class="main-content">
+      <!-- For index.html, the search + results sections -->
+      <section id="search-section">
+        <form id="search-form">
+          <input
+            type="text"
+            id="country-input"
+            placeholder="Enter country name"
+            required
+          />
+          <button type="submit">Search</button>
+          <button type="button" id="random-btn">Surprise Me</button>
+        </form>
+      </section>
+
+      <section id="results-section">
+        <!-- Country detail view will appear here -->
+      </section>
+    </section>
+
+  </div> <!-- /.content-wrapper -->
+
+  <footer>
+    <p>© <span id="current-year"></span> Travel Bucket List</p>
+  </footer>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
