@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Travel Wishlist</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
+  <!-- Header: app title and top-nav (hidden on desktop via CSS) -->
   <header>
     <h1>My Travel Wishlist</h1>
     <nav class="header-nav">
@@ -15,8 +16,9 @@
     </nav>
   </header>
 
+  <!-- Content-wrapper: holds sidebar (desktop) + main content -->
   <div class="content-wrapper">
-
+    <!-- Sidebar (hidden on mobile, shown on ≥768px) -->
     <aside class="sidebar">
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -25,22 +27,25 @@
       </ul>
     </aside>
 
+    <!-- Main content area: wishlist container and “Clear Wishlist” button -->
     <section class="main-content">
+      <!-- Wishlist Section: saved countries and clear button -->
       <section id="wishlist-section">
         <h2>Saved Countries</h2>
         <div id="wishlist-container">
-          <!-- Saved country cards will appear here -->
+          <!-- Saved country cards will appear here (injected by main.js) -->
         </div>
         <button id="clear-wishlist-btn">Clear Wishlist</button>
       </section>
     </section>
-
   </div> <!-- /.content-wrapper -->
 
+  <!-- Footer: dynamic year is inserted via JavaScript -->
   <footer>
     <p>© <span id="current-year"></span> Travel Bucket List</p>
   </footer>
 
+  <!-- Main JavaScript (module) that handles both index & wishlist pages -->
   <script type="module" src="js/main.js"></script>
 </body>
 </html>

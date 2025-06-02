@@ -1,68 +1,71 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap');
 
 /* Global Styles */
-* { box-sizing: border-box; margin: 0; padding: 0; }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 body {
-  /* 0. Turn the page into a columnar flex container */
+  /* Make the body a column‐flex container filling the viewport */
   display: flex;
   flex-direction: column;
-  min-height: 100vh;         /* Make the body fill the full viewport height */
-  margin: 0;                  /* Remove default page margins */
-  box-sizing: border-box;     /* Ensure padding/border are included in element’s size */
+  min-height: 100vh;
+  margin: 0;
+  box-sizing: border-box;
 
-  /* 1. Typography & colors */
+  /* Typography and background color */
   font-family: 'Open Sans', sans-serif;
   line-height: 1.6;
   background: #f7f7f7;
   color: #333333;
 }
 header {
-    background: #4B34D1;
-    color: #ffffff;
-    padding: 1rem;
+  background: #4B34D1;
+  color: #ffffff;
+  padding: 1rem;
 }
 header h1 {
-    font-family: 'Montserrat', sans-serif;
-    margin-bottom: 0.5rem;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 0.5rem;
 }
 nav a {
-    color: #ffffff;
-    text-decoration: none;
-    margin: 0 0.5rem;
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 0.5rem;
 }
 nav a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 /* Main Content */
 main {
-    padding: 1rem;
+  padding: 1rem;
 }
 #search-section {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 #search-form {
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
 }
 #search-form input {
-    flex: 1;
-    padding: 0.5rem;
-    border: 1px solid #cccccc;
-    border-radius: 4px;
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
 }
 #search-form button {
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    background: #8B3700;
-    color: #ffffff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background: #8B3700;
+  color: #ffffff;
 }
 #search-form button:hover {
-    background: #7A2F00;
+  background: #7A2F00;
 }
 
 /* Results Section */
@@ -71,14 +74,13 @@ main {
   justify-content: center;
   padding: 1rem;
 }
-
 #results-section .country-card {
   width: 100%;
   max-width: 600px;
   margin: 0 auto;
 }
 
-/* 1. Card‐scale on hover (buttons remain static) */
+/* 1) Card‐scale on hover (buttons remain static) */
 .country-card {
   position: relative;
   background: #ffffff;
@@ -87,13 +89,14 @@ main {
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   margin-bottom: 1rem;
   transition: transform 0.3s, box-shadow 0.3s;
+  animation: fadeIn 0.5s ease-out;
 }
 .country-card:hover {
   transform: scale(1.02);
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
-/* 3. Buttons: no scaling, only color fade (transition already applied) */
+/* 2) Button color‐fade on hover */
 button {
   transition: background 0.3s;
 }
@@ -160,7 +163,7 @@ button {
   background: #7a2727;
 }
 
-/* 2. Slightly desaturate flags by default, restore on card‐hover */
+/* 3) Slightly desaturate flags by default; restore on card‐hover */
 .country-card img {
   width: 100%;
   border-radius: 4px;
@@ -174,11 +177,11 @@ button {
 }
 
 .country-info {
-    list-style: none;
-    margin-bottom: 0.5rem;
+  list-style: none;
+  margin-bottom: 0.5rem;
 }
 .country-info li {
-    margin-bottom: 0.25rem;
+  margin-bottom: 0.25rem;
 }
 
 /* Wishlist Section */
@@ -189,10 +192,10 @@ button {
   gap: 1rem;
 }
 #wishlist-container .country-card {
-    position: relative;
+  position: relative;
 }
 
-/*** 4) Fade‐in animation for cards ***/
+/* 4) Fade‐in animation for cards */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -200,35 +203,35 @@ button {
 
 /* Responsive Styles */
 @media (min-width: 768px) {
-    #search-form {
-        max-width: 600px;
-        margin: 0 auto;
-    }
-    #results-section {
-        max-width: 800px;
-        margin: 0 auto;
-    }
+  #search-form {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  #results-section {
+    max-width: 800px;
+    margin: 0 auto;
+  }
 }
 
 /* Footer */
 footer {
-    text-align: center;
-    padding: 1rem;
-    background: #4B34D1;
-    color: #ffffff;
+  text-align: center;
+  padding: 1rem;
+  background: #4B34D1;
+  color: #ffffff;
 }
 
-/* 1. Let the content-wrapper expand to fill available height */
+/* Let the content-wrapper expand to fill available height */
 .content-wrapper {
-  flex: 1;            /* take up all vertical space between header and footer */
+  flex: 1; /* take up all vertical space between header and footer */
   display: flex;
-  flex-direction: column; /* mobile-first: stack, but on desktop we'll switch to row */
+  flex-direction: column; 
 }
 
-/* 2. Sidebar base styling (hidden on mobile) */
+/* Sidebar (hidden on mobile) */
 .sidebar {
   display: none;
-  background: #eeeeee;      /* light gray background */
+  background: #eeeeee; /* light gray background */
   padding: 1rem;
 }
 .sidebar ul {
@@ -246,35 +249,35 @@ footer {
   text-decoration: underline;
 }
 
-/* 3. Main content always take full width by default */
+/* Main content always take full width by default */
 .main-content {
   flex: 1;
   padding: 1rem;
 }
 
-/* 4. On screens ≥ 768px, switch to two‐column layout */
+/* On screens ≥ 768px, switch to two‐column layout */
 @media (min-width: 768px) {
   .content-wrapper {
-    flex-direction: row;   /* place sidebar & main-content side by side */
+    flex-direction: row; /* place sidebar & main-content side by side */
   }
   .sidebar {
     display: block;
-    width: 200px;          /* fixed sidebar width */
+    width: 200px; /* fixed sidebar width */
     border-right: 1px solid #cccccc;
   }
   .main-content {
-    flex: 1;               /* fill remaining space */
-    padding: 2rem 1.5rem;  /* a bit more padding on desktop */
+    flex: 1; /* fill remaining space */
+    padding: 2rem 1.5rem; /* a bit more padding on desktop */
   }
 
-  /* Optionally adjust the header to align items horizontally */
+  /* Adjust header to align items horizontally */
   header {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
   nav {
-    margin: 0; /* remove bottom margin if you had any */
+    margin: 0; /* remove bottom margin */
   }
 }
 

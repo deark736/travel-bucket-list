@@ -1,4 +1,3 @@
-
 // wishlist.js - handles wishlist storage and retrieval using localStorage
 
 const WISHLIST_KEY = 'travelWishlist';

@@ -1,10 +1,15 @@
-
 // main.js – ties together API and wishlist logic, handles DOM interactions
 
 import { getCountryByName, getRandomCountry, getExchangeRate } from './api.js';
 import { getWishlist, addToWishlist, removeFromWishlist, clearWishlist } from './wishlist.js';
 
-// Helper to create country card HTML
+/**
+ * Helper to create country card HTML
+ * Creates a <div class="country-card"> containing:
+ *  - flag image
+ *  - list of fields (Name, Capital, Population, Region, Currency)
+ *  - “Add to Wishlist” or “Remove from Wishlist” button
+ */
 function createCountryCard(country, rate) {
   const card = document.createElement('div');
   card.className = 'country-card';

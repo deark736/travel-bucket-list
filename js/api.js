@@ -1,4 +1,3 @@
-
 // api.js - handles external API calls
 
 const REST_COUNTRIES_BASE = "https://restcountries.com/v3.1";

@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+  <!-- Header: app title and top‐nav (hidden on desktop via CSS) -->
   <header>
     <h1>Travel Bucket List</h1>
     <nav class="header-nav">
@@ -15,10 +16,10 @@
     </nav>
   </header>
 
-  <!-- New: content-wrapper holds the sidebar + actual main content -->
+  <!-- Content‐wrapper: holds sidebar (desktop) + main content -->
   <div class="content-wrapper">
 
-    <!-- New: Sidebar for desktop -->
+    <!-- Sidebar (hidden on mobile, shown on ≥768px) -->
     <aside class="sidebar">
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -27,9 +28,10 @@
       </ul>
     </aside>
 
-    <!-- Existing main content moves inside .main-content -->
+    <!-- Main content area: search form and results -->
     <section class="main-content">
-      <!-- For index.html, the search + results sections -->
+
+      <!-- Search Section: user can enter a country name or click "Surprise Me" -->
       <section id="search-section">
         <form id="search-form">
           <input
@@ -43,17 +45,21 @@
         </form>
       </section>
 
+      <!-- Results Section: JavaScript will inject country cards here -->
       <section id="results-section">
-        <!-- Country detail view will appear here -->
+        <!-- Country detail view will appear here when a search is performed -->
       </section>
-    </section>
+
+    </section> <!-- /.main-content -->
 
   </div> <!-- /.content-wrapper -->
 
+  <!-- Footer: dynamic year is inserted via JavaScript -->
   <footer>
     <p>© <span id="current-year"></span> Travel Bucket List</p>
   </footer>
 
+  <!-- Main JavaScript (module) that handles search, wishlist, etc. -->
   <script type="module" src="js/main.js"></script>
 </body>
 </html>
