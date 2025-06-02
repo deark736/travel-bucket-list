@@ -78,13 +78,24 @@ main {
   margin: 0 auto;
 }
 
+/* 1. Card‐scale on hover (buttons remain static) */
 .country-card {
-    position: relative;
-    background: #ffffff;
-    border-radius: 8px;
-    padding: 1rem;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    margin-bottom: 1rem;
+  position: relative;
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  margin-bottom: 1rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.country-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* 3. Buttons: no scaling, only color fade (transition already applied) */
+button {
+  transition: background 0.3s;
 }
 
 /* “Add to Wishlist” – rectangular orange/brown */
@@ -100,7 +111,7 @@ main {
   background: #7A2F00;
 }
 
-/* “Remove from Wishlist” – rectangular red, now in normal flow */
+/* “Remove from Wishlist” – rectangular red */
 .remove-full-btn {
   background: #992f2f;
   border: none;
@@ -135,11 +146,33 @@ main {
   background: #7a2727;
 }
 
-.country-card img {
-    width: 100%;
-    border-radius: 4px;
-    margin-bottom: 0.5rem;
+/* “Clear Wishlist” button */
+#clear-wishlist-btn {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: #992f2f;
+  border: none;
+  border-radius: 4px;
+  color: #ffffff;
+  cursor: pointer;
 }
+#clear-wishlist-btn:hover {
+  background: #7a2727;
+}
+
+/* 2. Slightly desaturate flags by default, restore on card‐hover */
+.country-card img {
+  width: 100%;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+  filter: saturate(60%);
+  transition: filter 0.3s, opacity 0.3s;
+}
+.country-card:hover img {
+  filter: saturate(100%);
+  opacity: 1;
+}
+
 .country-info {
     list-style: none;
     margin-bottom: 0.5rem;
@@ -159,17 +192,10 @@ main {
     position: relative;
 }
 
-#clear-wishlist-btn {
-    margin-top: 1rem;
-    padding: 0.5rem 1rem;
-    background: #992f2f;
-    border: none;
-    border-radius: 4px;
-    color: #ffffff;
-    cursor: pointer;
-}
-#clear-wishlist-btn:hover {
-    background: #7a2727;
+/*** 4) Fade‐in animation for cards ***/
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 /* Responsive Styles */
