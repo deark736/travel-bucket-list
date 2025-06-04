@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Flight Price Tracker</title>
+
+  <!-- 1) Your main CSS (adjusted for the watches page) -->
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- 2) Chart.js from CDN for sparklines/line charts -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <!-- Header: App title + simple nav (hidden on desktop by CSS) -->
+  <header>
+    <h1>Flight Price Tracker</h1>
+    <nav class="header-nav">
+      <a href="index.html">Home</a> |
+      <a href="watches.html">Flight Watches</a> |
+      <a href="wishlist.html">Wishlist</a>
+    </nav>
+  </header>
+
+  <!-- Content‐wrapper contains sidebar (desktop) + main content -->
+  <div class="content-wrapper">
+
+    <!-- Sidebar for desktop (hidden on mobile) -->
+    <aside class="sidebar">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="watches.html">Flight Watches</a></li>
+        <li><a href="wishlist.html">Wishlist</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content: Add new watch form + list of watches -->
+    <section class="main-content">
+      <!-- “Add New Watch” form -->
+      <section id="add-watch-section">
+        <h2>Add a New Flight Watch</h2>
+        <form id="add-watch-form">
+          <label>
+            Origin (IATA Code):
+            <input type="text" id="origin-input" placeholder="e.g. JFK" maxlength="3" required />
+          </label>
+          <label>
+            Destination (IATA Code):
+            <input type="text" id="destination-input" placeholder="e.g. LHR" maxlength="3" required />
+          </label>
+          <label>
+            Departure Date:
+            <input type="date" id="departure-date-input" required />
+          </label>
+          <button type="submit">Watch Price</button>
+        </form>
+      </section>
+
+      <!-- “My Watches” list -->
+      <section id="watches-section">
+        <h2>My Flight Watches</h2>
+        <div id="watches-container">
+          <!-- JavaScript will inject watch‐cards here -->
+        </div>
+      </section>
+    </section>
+  </div> <!-- /.content-wrapper -->
+
+  <!-- Footer with dynamic year -->
+  <footer>
+    <p>© <span id="current-year"></span> Travel Bucket List – Flight Price Tracker</p>
+  </footer>
+
+  <!-- 1) flightApi.js handles Amadeus calls -->
+  <script type="module" src="js/flightApi.js"></script>
+  <!-- 2) watches.js contains UI + localStorage logic + charts -->
+  <script type="module" src="js/watches.js"></script>
+</body>
+</html>

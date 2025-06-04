@@ -1,25 +1,47 @@
+/* ======================================================================================= 
+   styles.css (merged)
+
+   A) “Travel Bucket List” styles (index.html & wishlist.html)
+   B) “Flight Watcher” styles (watches.html)
+   ======================================================================================= */
+
+/* ---------------------------------------------------------------------------------------
+   A) “Travel Bucket List” Styles
+   --------------------------------------------------------------------------------------- */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap');
 
-/* Global Styles */
+/* -------------------- Global Reset & Base Typography -------------------- */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 body {
-  /* Make the body a column‐flex container filling the viewport */
+  /* Make the body a column‐flex container that fills the viewport */
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   margin: 0;
   box-sizing: border-box;
 
-  /* Typography and background color */
+  /* Typography & background */
   font-family: 'Open Sans', sans-serif;
   line-height: 1.6;
   background: #f7f7f7;
   color: #333333;
 }
+
+/* Ensure all form controls use the same font as the body */
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Header (both index.html & wishlist.html use <nav> rather than .header-nav) */
 header {
   background: #4B34D1;
   color: #ffffff;
@@ -29,6 +51,7 @@ header h1 {
   font-family: 'Montserrat', sans-serif;
   margin-bottom: 0.5rem;
 }
+/* The nav links inside index.html and wishlist.html */
 nav a {
   color: #ffffff;
   text-decoration: none;
@@ -38,10 +61,42 @@ nav a:hover {
   text-decoration: underline;
 }
 
-/* Main Content */
-main {
+/* ――― INDEX.HTML / WISHLIST.HTML CONTENT ――― */
+/* Main content area wrapper */
+.content-wrapper {
+  flex: 1;                 /* Fill all vertical space between header & footer */
+  display: flex;
+  flex-direction: column;  /* Mobile‐first: stack sidebar + main‐content */
+}
+
+/* Sidebar (hidden on mobile) */
+.sidebar {
+  display: none;
+  background: #eeeeee;
   padding: 1rem;
 }
+.sidebar ul {
+  list-style: none;
+}
+.sidebar li + li {
+  margin-top: 0.5rem;
+}
+.sidebar a {
+  color: #333333;
+  text-decoration: none;
+  font-weight: 600;
+}
+.sidebar a:hover {
+  text-decoration: underline;
+}
+
+/* Main‐content (the right side on desktop, full width on mobile) */
+.main-content {
+  flex: 1;
+  padding: 1rem;
+}
+
+/* ――― INDEX.HTML: Search & Results Sections ――― */
 #search-section {
   margin-bottom: 1rem;
 }
@@ -63,12 +118,13 @@ main {
   cursor: pointer;
   background: #8B3700;
   color: #ffffff;
+  transition: background 0.3s;
 }
 #search-form button:hover {
   background: #7A2F00;
 }
 
-/* Results Section */
+/* Results Section: center a single country‐card on mobile */
 #results-section {
   display: flex;
   justify-content: center;
@@ -80,6 +136,19 @@ main {
   margin: 0 auto;
 }
 
+/* OPTIONAL: Constrain #search-form to 600px and #results-section to 800px on ≥768px */
+@media (min-width: 768px) {
+  #search-form {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  #results-section {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+}
+
+/* ――― COUNTRY CARD Styling (common to index.html & wishlist.html) ――― */
 /* 1) Card‐scale on hover (buttons remain static) */
 .country-card {
   position: relative;
@@ -144,12 +213,13 @@ button {
   text-align: center;
   line-height: 24px; /* center the “×” vertically */
   cursor: pointer;
+  transition: background 0.3s;
 }
 .remove-btn:hover {
   background: #7a2727;
 }
 
-/* “Clear Wishlist” button */
+/* “Clear Wishlist” button (on wishlist.html) */
 #clear-wishlist-btn {
   margin-top: 1rem;
   padding: 0.5rem 1rem;
@@ -158,6 +228,7 @@ button {
   border-radius: 4px;
   color: #ffffff;
   cursor: pointer;
+  transition: background 0.3s;
 }
 #clear-wishlist-btn:hover {
   background: #7a2727;
@@ -184,11 +255,11 @@ button {
   margin-bottom: 0.25rem;
 }
 
-/* Wishlist Section */
+/* Wishlist Section: grid layout for saved cards (wishlist.html) */
 #wishlist-container {
   display: grid;
-  justify-content: center; /* center the grid items when there’s leftover space */
-  grid-template-columns: repeat(auto-fit, minmax(200px, 400px)); 
+  justify-content: center; /* center grid items */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 400px));
   gap: 1rem;
 }
 #wishlist-container .country-card {
@@ -201,19 +272,47 @@ button {
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* Responsive Styles */
+/* Give every section heading a bit of bottom‐space */
+#wishlist-section h2,
+#watches-section h2 {
+  margin-bottom: 0.75rem;
+}
+
+/* Responsive Breakpoint ≥768px for index.html & wishlist.html */
 @media (min-width: 768px) {
-  #search-form {
-    max-width: 600px;
-    margin: 0 auto;
+  /* Sidebar appears and main‐content shifts right */
+  .content-wrapper {
+    flex-direction: row;
   }
-  #results-section {
-    max-width: 800px;
-    margin: 0 auto;
+  .sidebar {
+    display: block;
+    width: 200px;       /* fixed sidebar width */
+    border-right: 1px solid #cccccc;
+  }
+  .main-content {
+    flex: 1;            /* fill remaining space */
+    padding: 2rem 1.5rem;
+  }
+
+  /* Adjust header: display title + nav horizontally */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  nav {
+    margin: 0; /* remove possible bottom margin */
   }
 }
 
-/* Footer */
+/* Hide the <nav> on desktop (we rely on the sidebar) */
+@media (min-width: 768px) {
+  .header-nav {
+    display: none;
+  }
+}
+
+/* Footer (used by all pages) */
 footer {
   text-align: center;
   padding: 1rem;
@@ -221,69 +320,148 @@ footer {
   color: #ffffff;
 }
 
-/* Let the content-wrapper expand to fill available height */
-.content-wrapper {
-  flex: 1; /* take up all vertical space between header and footer */
+
+/* =======================================================================================
+   B) “Flight Watcher” Styles (watches.html)
+   ======================================================================================= */
+/* These styles only affect elements that appear on watches.html: 
+   - #add-watch-section, #add-watch-form, #watches-container,
+   - .watch-card, .remove-watch-btn, .watch-chart, etc. */
+
+/* “Add New Watch” section */
+#add-watch-section h2 {
+  margin-bottom: 0.5rem;
+  font-family: 'Montserrat', sans-serif;
+}
+#add-watch-form {
   display: flex;
-  flex-direction: column; 
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: flex-end;
+  margin-bottom: 1.5rem;
+}
+#add-watch-form label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
 }
 
-/* Sidebar (hidden on mobile) */
-.sidebar {
-  display: none;
-  background: #eeeeee; /* light gray background */
+/* Style all inputs (text + date) in the “Add New Watch” form */
+#add-watch-form input {
+  padding: 0.4rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 0.25rem;
+  font-family: inherit;
+  font-size: 0.9rem;
+}
+
+#add-watch-form button {
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  background: #8B3700;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+#add-watch-form button:hover {
+  background: #7A2F00;
+}
+
+/* Watches Container: grid of cards */
+#watches-container {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* Individual Watch Card */
+.watch-card {
+  position: relative;
+  background: #fff;
+  border-radius: 8px;
   padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: fadeIn 0.5s ease-out; /* Re‐use the same fadeIn keyframes */
 }
-.sidebar ul {
-  list-style: none;
-}
-.sidebar li + li {
-  margin-top: 0.5rem;
-}
-.sidebar a {
-  color: #333333;
-  text-decoration: none;
-  font-weight: 600;
-}
-.sidebar a:hover {
-  text-decoration: underline;
+.watch-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
-/* Main content always take full width by default */
-.main-content {
-  flex: 1;
-  padding: 1rem;
+/* “Remove Watch” small circular button (top-right of each .watch-card) */
+.remove-watch-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: #992f2f;
+  border: none;
+  border-radius: 50%;
+  color: #fff;
+  width: 24px;
+  height: 24px;
+  font-size: 16px;
+  text-align: center;
+  line-height: 24px; /* center the “×” vertically */
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.remove-watch-btn:hover {
+  background: #7a2727;
 }
 
-/* On screens ≥ 768px, switch to two‐column layout */
+/* Watch Card Content */
+.watch-card h3 {
+  margin-bottom: 0.3rem;
+  font-family: 'Montserrat', sans-serif;
+}
+.watch-card p {
+  margin-bottom: 0.25rem;
+  font-size: 0.9rem;
+}
+.watch-price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+/* Chart Canvas inside each .watch-card */
+.watch-chart {
+  width: 100% !important;
+  height: 100px !important;
+  margin-bottom: 0.5rem;
+}
+
+/* Repeat the fadeIn keyframes (already declared above) */
+
+/* Responsive Breakpoint (≥768px) */
 @media (min-width: 768px) {
+  /* Sidebar + main‐content layout for watches.html (same as index.html) */
   .content-wrapper {
-    flex-direction: row; /* place sidebar & main-content side by side */
+    flex-direction: row;
   }
   .sidebar {
     display: block;
-    width: 200px; /* fixed sidebar width */
-    border-right: 1px solid #cccccc;
+    width: 200px;
+    border-right: 1px solid #ccc;
   }
   .main-content {
-    flex: 1; /* fill remaining space */
-    padding: 2rem 1.5rem; /* a bit more padding on desktop */
+    flex: 1;
+    padding: 2rem;
   }
-
-  /* Adjust header to align items horizontally */
   header {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-  nav {
-    margin: 0; /* remove bottom margin */
-  }
-}
-
-/* Hide the header nav on desktop, since the sidebar handles navigation */
-@media (min-width: 768px) {
   .header-nav {
-    display: none;
+    margin: 0;
+  }
+  .header-nav a {
+    margin: 0 1rem;
   }
 }
