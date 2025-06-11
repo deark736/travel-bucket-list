@@ -86,3 +86,35 @@ export async function getCheapestFlightPrice(origin, destination, date, currency
   const priceStr = firstOffer.price.total; // string, e.g. "345.23"
   return parseFloat(priceStr);
 }
+
+/**
+ * Fetch cheapest round-trip price for given dates.
+ * Uses Amadeus /v1/shopping/flight-dates or two separate one-way calls.
+ */
+export async function getRoundTripPrice(origin, dest, depart, ret, currency = 'USD') {
+  const outPrice = await getCheapestFlightPrice(origin, dest, depart, currency);
+  const inPrice  = await getCheapestFlightPrice(dest, origin, ret, currency);
+  return outPrice + inPrice;
+}
+
+/**
+ * Fetch cheapest one-way price within ±window days of a target date.
+ * Returns the minimum found.
+ */
+export async function getCheapestInRange(origin, dest, targetDate, window = 0, currency = 'USD') {
+  const base = new Date(targetDate);
+  let best = Infinity;
+  for (let delta = -window; delta <= window; delta++) {
+    const d = new Date(base);
+    d.setDate(d.getDate() + delta);
+    const iso = d.toISOString().split('T')[0];
+    try {
+      const price = await getCheapestFlightPrice(origin, dest, iso, currency);
+      if (price < best) best = price;
+    } catch {
+      // no offer that day → skip
+    }
+  }
+  if (best === Infinity) throw new Error('No prices found in date range');
+  return best;
+}

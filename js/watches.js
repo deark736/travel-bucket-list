@@ -1,12 +1,24 @@
 // watches.js – front‐end logic for adding/removing flight watches, fetching prices, and drawing charts
 
-import { getCheapestFlightPrice } from './flightApi.js';
+import {
+  getCheapestFlightPrice,
+  getRoundTripPrice,
+  getCheapestInRange
+} from './flightApi.js';
 
 const WATCHES_KEY = 'flightWatches'; // key under which we store an array of route objects
 
 /**
- * Read the array of watches from localStorage
- * @returns {Array<Object>} each object: { origin, destination, date, currency }
+ * Read the array of flight watches from localStorage.
+ * @returns {Array<Object>} each object:
+ *   {
+ *     origin: string,         // IATA code
+ *     destination: string,    // IATA code
+ *     departDate: string,     // 'YYYY-MM-DD'
+ *     returnDate: string|null,// 'YYYY-MM-DD' or null
+ *     windowDays: number,     // ± days around departDate
+ *     currency: string        // e.g. 'USD'
+ *   }
  */
 function getWatches() {
   const stored = localStorage.getItem(WATCHES_KEY);
@@ -22,54 +34,65 @@ function saveWatches(watches) {
 }
 
 /**
- * Remove a watch by matching origin+destination+date exactly
- * @param {string} origin
- * @param {string} destination
- * @param {string} date
+ * Remove a flight watch by matching all its parameters.
+ * @param {string} origin       – origin IATA code
+ * @param {string} destination  – destination IATA code
+ * @param {string} departDate   – 'YYYY-MM-DD'
+ * @param {string|null} returnDate  – 'YYYY-MM-DD' or null
+ * @param {number} windowDays   – ± days window
  */
-function removeWatch(origin, destination, date) {
-  let watches = getWatches();
-  watches = watches.filter(
-    (w) =>
-      !(
-        w.origin === origin &&
-        w.destination === destination &&
-        w.date === date
-      )
+function removeWatch(origin, destination, departDate, returnDate = null, windowDays = 0) {
+  const watches = getWatches().filter(w =>
+    !(
+      w.origin      === origin &&
+      w.destination === destination &&
+      w.departDate  === departDate &&
+      w.returnDate  === returnDate &&
+      w.windowDays  === windowDays
+    )
   );
   saveWatches(watches);
-  // Also remove the history key
-  localStorage.removeItem(`history-${origin}-${destination}-${date}`);
+  // Also remove history
+  const keyParts = [origin, destination, departDate];
+  if (returnDate)  keyParts.push('rt', returnDate);
+  if (windowDays)  keyParts.push('wd', windowDays);
+  localStorage.removeItem(`history-${keyParts.join('-')}`);
 }
 
 /**
- * Append a price to the history array in localStorage under the key:
- *   history-ORIG-DEST-DATE
- * @param {string} origin
- * @param {string} destination
- * @param {string} date
- * @param {number} price
- * @returns {Array<number>} the updated history array
+ * Append a price to the history array in localStorage under a composite key.
+ * Key format: history-ORIG-DEST-departDate[-rt-returnDate][-wd-windowDays]
+ *
+ * @param {string} key   – composite history key
+ * @param {number} price – latest flight price
+ * @returns {Array<number>} updated history array (max 10 entries)
  */
-function appendToHistory(origin, destination, date, price) {
-  const key = `history-${origin}-${destination}-${date}`;
+function appendToHistory(key, price) {
   const stored = localStorage.getItem(key);
   let history = stored ? JSON.parse(stored) : [];
   history.push(price);
-  // Keep only the last 10 data points
   if (history.length > 10) history.shift();
   localStorage.setItem(key, JSON.stringify(history));
   return history;
 }
 
 /**
- * Build a single watch‐card DOM element and append it to #watches-container.
- * Also triggers a price fetch, updates history, and draws a Chart.js sparkline.
+ * Build and append a flight‐watch “card” to the page.
+ * Fetches the current price (one-way, round-trip, or flexible-range),
+ * updates its localStorage history, and draws a sparkline.
  *
- * @param {Object} watch - { origin, destination, date, currency }
+ * @param {Object} watch
+ *   {
+ *     origin: string,
+ *     destination: string,
+ *     departDate: string,
+ *     returnDate: string|null,
+ *     windowDays: number,
+ *     currency: string
+ *   }
  */
 async function createWatchCard(watch) {
-  const { origin, destination, date, currency } = watch;
+  const { origin, destination, departDate, returnDate, windowDays = 0, currency } = watch;
   const card = document.createElement('div');
   card.className = 'watch-card';
 
@@ -80,7 +103,7 @@ async function createWatchCard(watch) {
   removeBtn.title = 'Remove this watch';
   removeBtn.setAttribute('aria-label', 'Remove this watch');
   removeBtn.addEventListener('click', () => {
-    removeWatch(origin, destination, date);
+    removeWatch(origin, destination, departDate, returnDate, windowDays);
     card.remove();
   });
   card.appendChild(removeBtn);
@@ -92,7 +115,7 @@ async function createWatchCard(watch) {
 
   // 3) Date and currency info
   const dateP = document.createElement('p');
-  dateP.textContent = `Depart: ${date}`;
+  dateP.textContent = `Depart: ${departDate}`;
   card.appendChild(dateP);
 
   const currencyP = document.createElement('p');
@@ -108,8 +131,13 @@ async function createWatchCard(watch) {
   // 5) Canvas for Chart.js sparkline
   const canvas = document.createElement('canvas');
   canvas.className = 'watch-chart';
-  // Give each canvas a unique ID so Chart.js can find it
-  canvas.id = `chart-${origin}-${destination}-${date}`;
+  // Build a unique canvas ID from all watch parameters so Chart.js targets the correct element
+  const idParts = [origin, destination, departDate];
+  if (returnDate)  idParts.push('rt', returnDate);
+  if (windowDays)  idParts.push('wd', windowDays);
+
+  const canvasId = `chart_${idParts.join('_')}`;
+  canvas.id = canvasId;
   card.appendChild(canvas);
 
   // 6) Append card to container, then fetch actual price
@@ -117,17 +145,27 @@ async function createWatchCard(watch) {
   container.appendChild(card);
 
   try {
-    // a) Fetch the latest cheapest price from the Amadeus API
-    const price = await getCheapestFlightPrice(origin, destination, date, currency);
-    priceP.textContent = `Price: ${price.toFixed(2)} ${currency.toUpperCase()}`;
+    let price;
+    if (returnDate) {
+      price = await getRoundTripPrice(origin, destination, departDate, returnDate, currency);
+      priceP.textContent = `Round-trip: ${price.toFixed(2)} ${currency}`;
+    } else if (windowDays > 0) {
+      price = await getCheapestInRange(origin, destination, departDate, windowDays, currency);
+      priceP.textContent = `Cheapest ±${windowDays}d: ${price.toFixed(2)} ${currency}`;
+    } else {
+      price = await getCheapestFlightPrice(origin, destination, departDate, currency);
+      priceP.textContent = `One-way: ${price.toFixed(2)} ${currency}`;
+    }
 
-    // b) Append price to history (max 10 entries)
-    const history = appendToHistory(origin, destination, date, price);
+    const keyParts = [origin, destination, departDate];
+    if (returnDate)    keyParts.push('rt', returnDate);
+    if (windowDays)    keyParts.push('wd', windowDays);
 
-    // c) Draw Chart.js sparkline
+    const historyKey = `history-${keyParts.join('-')}`;
+
+    const history = appendToHistory(historyKey, price);
+
     drawSparkline(canvas.id, history, currency);
-
-    // d) Add a subtle fade‐in for the card (CSS keyframes)
     card.style.animation = 'fadeIn 0.5s ease-out';
   } catch (err) {
     priceP.textContent = 'Error fetching price';
@@ -208,6 +246,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const origin = document.getElementById('origin-input').value.trim().toUpperCase();
     const destination = document.getElementById('destination-input').value.trim().toUpperCase();
     const date = document.getElementById('departure-date-input').value;
+    const returnDate = document.getElementById('return-date-input').value || null;
+    const windowDays = parseInt(document.getElementById('window-input').value || '0', 10);
 
     // Basic validation: origin ≠ destination, date must be in the future
     if (!origin || !destination || !date) {
@@ -227,11 +267,25 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Add the new watch to localStorage
-    const newWatch = { origin, destination, date, currency: 'USD' };
+    const newWatch = {
+      origin,
+      destination,
+      departDate: date,
+      returnDate,
+      windowDays,
+      currency: 'USD'
+    };
     const watches = getWatches();
-    // Avoid duplicate (same origin+dest+date)
-    const exists = watches.some(
-      (w) => w.origin === origin && w.destination === destination && w.date === date
+    // Prevent duplicate watch with identical origin, destination, departure date,
+    // return date (if any), and flexible‐window days
+    const exists = watches.some(w =>
+      w.origin       === origin &&
+      w.destination  === destination &&
+      w.departDate   === date &&
+      (
+        (!w.returnDate && !returnDate && w.windowDays === windowDays) ||
+        (w.returnDate  === returnDate && w.windowDays === windowDays)
+      )
     );
     if (exists) {
       alert('You are already watching this route on that date.');

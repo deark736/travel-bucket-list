@@ -2,6 +2,35 @@
 
 const REST_COUNTRIES_BASE = "https://restcountries.com/v3.1";
 const EXCHANGE_RATE_BASE = "https://v6.exchangerate-api.com/v6/94f9d1531bbe860583e806b0/latest";
+const WIKI_BASE = "https://en.wikipedia.org/api/rest_v1/page/summary";
+const MAPBOX_TOKEN = "pk.eyJ1Ijoia2Fua2FuaG8iLCJhIjoiY21icnVxa2c3MGUwcjJwcHhuNXIwZjJkZSJ9.fkJa48wRY1biAARbtUOVow";
+
+/**
+ * Fetch a one‐sentence Wikipedia summary for a given country name.
+ * @param {string} countryName
+ * @returns {Promise<string>} the summary text
+ */
+export async function getWikiSummary(countryName) {
+  const resp = await fetch(`${WIKI_BASE}/${encodeURIComponent(countryName)}`);
+  if (!resp.ok) return "";
+  const data = await resp.json();
+  return data.extract?.split(".")[0] + "." || "";
+}
+
+/**
+ * Build a Mapbox Static Map URL centered on lat/lng
+ * showing the country or capital.
+ * @param {number} lat
+ * @param {number} lng
+ * @returns {string} the image URL
+ */
+export function getStaticMapURL(lat, lng) {
+  const base = "https://api.mapbox.com/styles/v1/mapbox/streets-v11/static";
+  const zoom = 4;
+  const width = 300;
+  const height = 150;
+  return `${base}/${lng},${lat},${zoom}/${width}x${height}?access_token=${MAPBOX_TOKEN}`;
+}
 
 // Fetch country data by full name
 export async function getCountryByName(name) {

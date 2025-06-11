@@ -178,6 +178,9 @@ button {
   background: #8B3700;
   color: #ffffff;
   cursor: pointer;
+  display: block;
+  margin-top: 1rem;
+  margin-left: auto;
 }
 .add-btn:hover {
   background: #7A2F00;
@@ -193,6 +196,9 @@ button {
   font-size: 0.9rem;
   cursor: pointer;
   z-index: 1;
+  display: block;
+  margin-top: 1rem;
+  margin-left: auto;
 }
 .remove-full-btn:hover {
   background: #7a2727;
@@ -253,6 +259,23 @@ button {
 }
 .country-info li {
   margin-bottom: 0.25rem;
+}
+
+/* Wikipedia summary text */
+.country-summary {
+  font-style: italic;
+  margin: 0.5rem 0;
+  color: #555;
+}
+
+/* Static map preview */
+.country-map {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
 }
 
 /* Wishlist Section: grid layout for saved cards (wishlist.html) */

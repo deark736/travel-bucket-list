@@ -1,6 +1,12 @@
 // main.js – ties together API and wishlist logic, handles DOM interactions
 
-import { getCountryByName, getRandomCountry, getExchangeRate } from './api.js';
+import {
+  getCountryByName,
+  getRandomCountry,
+  getExchangeRate,
+  getWikiSummary,
+  getStaticMapURL
+} from './api.js';
 import { getWishlist, addToWishlist, removeFromWishlist, clearWishlist } from './wishlist.js';
 
 /**
@@ -10,7 +16,7 @@ import { getWishlist, addToWishlist, removeFromWishlist, clearWishlist } from '.
  *  - list of fields (Name, Capital, Population, Region, Currency)
  *  - “Add to Wishlist” or “Remove from Wishlist” button
  */
-function createCountryCard(country, rate) {
+async function createCountryCard(country, rate) {
   const card = document.createElement('div');
   card.className = 'country-card';
 
@@ -40,6 +46,24 @@ function createCountryCard(country, rate) {
     infoList.appendChild(li);
   });
   card.appendChild(infoList);
+  
+  // ----- Wikipedia Summary -----
+  const summary = await getWikiSummary(country.name.common);
+  if (summary) {
+    const p = document.createElement('p');
+    p.className = 'country-summary';
+    p.textContent = summary;
+    card.appendChild(p);
+  }
+
+  // ----- Static Map Preview -----
+  const [lat, lng] = country.latlng;
+  const mapUrl = getStaticMapURL(lat, lng);
+  const mapImg = document.createElement('img');
+  mapImg.src = mapUrl;
+  mapImg.alt = `Map of ${country.name.common}`;
+  mapImg.className = 'country-map';
+  card.appendChild(mapImg);
 
   // ----- Add or Remove Button -----
   const btn = document.createElement('button');
@@ -47,19 +71,15 @@ function createCountryCard(country, rate) {
   const inWishlist = wishlist.some(item => item.name.common === country.name.common);
 
   if (inWishlist && document.getElementById('wishlist-container')) {
-    // wishlist.html: small “×” in top-right (absolute is fine there)
     btn.textContent = '×';
     btn.className = 'remove-btn';
     btn.title = 'Remove from Wishlist';
     btn.setAttribute('aria-label', 'Remove from Wishlist');
-
     btn.addEventListener('click', () => {
       removeFromWishlist(country.name.common);
       card.remove();
     });
-
   } else {
-    // index.html, handle both add/remove in the same spot
     if (inWishlist) {
       btn.textContent = 'Remove from Wishlist';
       btn.className = 'remove-full-btn';
@@ -71,17 +91,14 @@ function createCountryCard(country, rate) {
       btn.title = 'Add to Wishlist';
       btn.setAttribute('aria-label', 'Add to Wishlist');
     }
-
     btn.addEventListener('click', () => {
       if (btn.classList.contains('add-btn')) {
-        // Switch to “Remove from Wishlist”
         addToWishlist(country);
         btn.textContent = 'Remove from Wishlist';
         btn.className = 'remove-full-btn';
         btn.title = 'Remove from Wishlist';
         btn.setAttribute('aria-label', 'Remove from Wishlist');
       } else {
-        // Switch back to “Add to Wishlist”
         removeFromWishlist(country.name.common);
         btn.textContent = 'Add to Wishlist';
         btn.className = 'add-btn';
@@ -103,7 +120,7 @@ async function displayCountry(name) {
     const rate = await getExchangeRate(currencyCode);
     const resultsSection = document.getElementById('results-section');
     resultsSection.innerHTML = ''; // clear previous
-    const card = createCountryCard(country, rate);
+    const card = await createCountryCard(country, rate);
     resultsSection.appendChild(card);
   } catch (err) {
     alert(err.message);
@@ -118,7 +135,7 @@ async function displayRandomCountry() {
     const rate = await getExchangeRate(currencyCode);
     const resultsSection = document.getElementById('results-section');
     resultsSection.innerHTML = '';
-    const card = createCountryCard(country, rate);
+    const card = await createCountryCard(country, rate);
     resultsSection.appendChild(card);
   } catch (err) {
     alert(err.message);
@@ -141,17 +158,17 @@ function initIndexPage() {
 }
 
 // Initialize wishlist page display
-function initWishlistPage() {
+async function initWishlistPage() {
   const container = document.getElementById('wishlist-container');
   const wishlist = getWishlist();
   container.innerHTML = '';
-  wishlist.forEach(country => {
+
+  for (const country of wishlist) {
     const currencyCode = Object.keys(country.currencies)[0];
-    getExchangeRate(currencyCode).then(rate => {
-      const card = createCountryCard(country, rate);
-      container.appendChild(card);
-    });
-  });
+    const rate = await getExchangeRate(currencyCode);
+    const card = await createCountryCard(country, rate);
+    container.appendChild(card);
+  }
 
   const clearBtn = document.getElementById('clear-wishlist-btn');
   clearBtn.addEventListener('click', () => {
