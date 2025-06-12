@@ -1,0 +1,2002 @@
+[
+  {
+    "code": "WKK",
+    "name": "Aleknagik / New Airport"
+  },
+  {
+    "code": "HIR",
+    "name": "Honiara International Airport"
+  },
+  {
+    "code": "MUA",
+    "name": "Munda Airport"
+  },
+  {
+    "code": "INU",
+    "name": "Nauru International Airport"
+  },
+  {
+    "code": "AXF",
+    "name": "Alxa Left Banner Bayanhot Airport"
+  },
+  {
+    "code": "VMU",
+    "name": "Baimuru Airport"
+  },
+  {
+    "code": "BUA",
+    "name": "Buka Airport"
+  },
+  {
+    "code": "OPU",
+    "name": "Balimo Airport"
+  },
+  {
+    "code": "CMU",
+    "name": "Chimbu Airport"
+  },
+  {
+    "code": "DAU",
+    "name": "Daru Airport"
+  },
+  {
+    "code": "GKA",
+    "name": "Goroka Airport"
+  },
+  {
+    "code": "GUR",
+    "name": "Gurney Airport"
+  },
+  {
+    "code": "PNP",
+    "name": "Girua Airport"
+  },
+  {
+    "code": "HKN",
+    "name": "Hoskins Airport"
+  },
+  {
+    "code": "KMA",
+    "name": "Kerema Airport"
+  },
+  {
+    "code": "KVG",
+    "name": "Kavieng Airport"
+  },
+  {
+    "code": "MAG",
+    "name": "Madang Airport"
+  },
+  {
+    "code": "HGU",
+    "name": "Mount Hagen Kagamuga Airport"
+  },
+  {
+    "code": "MDU",
+    "name": "Mendi Airport"
+  },
+  {
+    "code": "MAS",
+    "name": "Momote Airport"
+  },
+  {
+    "code": "LAE",
+    "name": "Nadzab Airport"
+  },
+  {
+    "code": "POM",
+    "name": "Port Moresby Jacksons International Airport"
+  },
+  {
+    "code": "RAB",
+    "name": "Tokua Airport"
+  },
+  {
+    "code": "VAI",
+    "name": "Vanimo Airport"
+  },
+  {
+    "code": "WBM",
+    "name": "Wapenamanda Airport"
+  },
+  {
+    "code": "WWK",
+    "name": "Wewak International Airport"
+  },
+  {
+    "code": "ZXT",
+    "name": "Zabrat Airport"
+  },
+  {
+    "code": "BCW",
+    "name": "Benguera Island Airport"
+  },
+  {
+    "code": "JAM",
+    "name": "Bezmer Air Base"
+  },
+  {
+    "code": "JEG",
+    "name": "Aasiaat Airport"
+  },
+  {
+    "code": "UAK",
+    "name": "Narsarsuaq Airport"
+  },
+  {
+    "code": "GOH",
+    "name": "Nuuk Airport"
+  },
+  {
+    "code": "JAV",
+    "name": "Ilulissat Airport"
+  },
+  {
+    "code": "KUS",
+    "name": "Kulusuk Airport"
+  },
+  {
+    "code": "SFJ",
+    "name": "Kangerlussuaq Airport"
+  },
+  {
+    "code": "JHS",
+    "name": "Sisimiut Airport"
+  },
+  {
+    "code": "THU",
+    "name": "Pituffik Space Base"
+  },
+  {
+    "code": "AEY",
+    "name": "Akureyri Airport"
+  },
+  {
+    "code": "EGS",
+    "name": "Egilsstaðir Airport"
+  },
+  {
+    "code": "HFN",
+    "name": "Hornafjörður Airport"
+  },
+  {
+    "code": "HZK",
+    "name": "Húsavík Airport"
+  },
+  {
+    "code": "IFJ",
+    "name": "Ísafjörður Airport"
+  },
+  {
+    "code": "KEF",
+    "name": "Keflavik International Airport"
+  },
+  {
+    "code": "RKV",
+    "name": "Reykjavík Domestic Airport"
+  },
+  {
+    "code": "SIJ",
+    "name": "Siglufjörður Airport"
+  },
+  {
+    "code": "VEY",
+    "name": "Vestmannaeyjar Airport"
+  },
+  {
+    "code": "PRN",
+    "name": "Priština Adem Jashari International Airport"
+  },
+  {
+    "code": "VDC",
+    "name": "Glauber de Andrade Rocha Airport"
+  },
+  {
+    "code": "BTZ",
+    "name": "Betong International Airport"
+  },
+  {
+    "code": "TXC",
+    "name": "Orsha Airport - Balbasovo Air Base"
+  },
+  {
+    "code": "CUK",
+    "name": "Caye Caulker Airport"
+  },
+  {
+    "code": "CYC",
+    "name": "Caye Chapel Airport"
+  },
+  {
+    "code": "CZH",
+    "name": "Corozal Airport"
+  },
+  {
+    "code": "DGA",
+    "name": "Dangriga Airport"
+  },
+  {
+    "code": "PND",
+    "name": "Punta Gorda Airport"
+  },
+  {
+    "code": "SJX",
+    "name": "Sartaneja Airport"
+  },
+  {
+    "code": "SPR",
+    "name": "John Greif II Airport"
+  },
+  {
+    "code": "TZA",
+    "name": "Sir Barry Bowen Municipal Airport"
+  },
+  {
+    "code": "BZB",
+    "name": "Bazaruto Island Airport"
+  },
+  {
+    "code": "YAA",
+    "name": "Anahim Lake Airport"
+  },
+  {
+    "code": "XQU",
+    "name": "Qualicum Beach Airport"
+  },
+  {
+    "code": "YZA",
+    "name": "Cache Creek-Ashcroft Regional Airport"
+  },
+  {
+    "code": "ZEL",
+    "name": "Bella Bella (Campbell Island) Airport"
+  },
+  {
+    "code": "HSC",
+    "name": "Shaoguan Danxia Airport"
+  },
+  {
+    "code": "JGS",
+    "name": "Jinggangshan Airport"
+  },
+  {
+    "code": "WHN",
+    "name": "Wuhan Hannan Municipal Airport"
+  },
+  {
+    "code": "NAY",
+    "name": "Beijing Nanjiao Airport"
+  },
+  {
+    "code": "DDR",
+    "name": "Rikaze Dingri Airport"
+  },
+  {
+    "code": "HQL",
+    "name": "Tashikuergan Hongqilafu Airport"
+  },
+  {
+    "code": "APJ",
+    "name": "Ali Pulan Airport"
+  },
+  {
+    "code": "YAG",
+    "name": "Fort Frances Municipal Airport"
+  },
+  {
+    "code": "YAH",
+    "name": "La Grande-4 Airport"
+  },
+  {
+    "code": "YAM",
+    "name": "Sault Ste Marie Airport"
+  },
+  {
+    "code": "XKS",
+    "name": "Kasabonika Airport"
+  },
+  {
+    "code": "YAY",
+    "name": "St. Anthony Airport"
+  },
+  {
+    "code": "YAZ",
+    "name": "Tofino / Long Beach Airport"
+  },
+  {
+    "code": "YBC",
+    "name": "Baie-Comeau Airport"
+  },
+  {
+    "code": "QBC",
+    "name": "Bella Coola Airport"
+  },
+  {
+    "code": "YBY",
+    "name": "Bonnyville Airport"
+  },
+  {
+    "code": "YBG",
+    "name": "CFB Bagotville / Saguenay-Bagotville Airport"
+  },
+  {
+    "code": "YBK",
+    "name": "Baker Lake Airport"
+  },
+  {
+    "code": "YBL",
+    "name": "Campbell River Airport"
+  },
+  {
+    "code": "YBR",
+    "name": "Brandon Municipal Airport"
+  },
+  {
+    "code": "YBX",
+    "name": "Lourdes-de-Blanc-Sablon Airport"
+  },
+  {
+    "code": "YCB",
+    "name": "Cambridge Bay Airport"
+  },
+  {
+    "code": "YCC",
+    "name": "Cornwall Regional Airport"
+  },
+  {
+    "code": "YCD",
+    "name": "Nanaimo Airport"
+  },
+  {
+    "code": "YCE",
+    "name": "Centralia / James T. Field Memorial Aerodrome"
+  },
+  {
+    "code": "YCG",
+    "name": "Castlegar/West Kootenay Regional Airport"
+  },
+  {
+    "code": "YCH",
+    "name": "Miramichi Airport"
+  },
+  {
+    "code": "YCL",
+    "name": "Charlo Airport"
+  },
+  {
+    "code": "YCN",
+    "name": "Cochrane Airport"
+  },
+  {
+    "code": "YCQ",
+    "name": "Chetwynd Airport"
+  },
+  {
+    "code": "YDA",
+    "name": "Dawson City Airport"
+  },
+  {
+    "code": "YDB",
+    "name": "Burwash Airport"
+  },
+  {
+    "code": "YDF",
+    "name": "Deer Lake Airport"
+  },
+  {
+    "code": "XRR",
+    "name": "Ross River Airport"
+  },
+  {
+    "code": "YDN",
+    "name": "Dauphin Barker Airport"
+  },
+  {
+    "code": "YDO",
+    "name": "Dolbeau-Saint-Felicien Airport"
+  },
+  {
+    "code": "YDQ",
+    "name": "Dawson Creek Airport"
+  },
+  {
+    "code": "YEG",
+    "name": "Edmonton International Airport"
+  },
+  {
+    "code": "YEL",
+    "name": "Elliot Lake Municipal Airport"
+  },
+  {
+    "code": "YEM",
+    "name": "Manitoulin East Municipal Airport"
+  },
+  {
+    "code": "YEN",
+    "name": "Estevan Airport"
+  },
+  {
+    "code": "YET",
+    "name": "Edson Airport"
+  },
+  {
+    "code": "YEV",
+    "name": "Inuvik Mike Zubko Airport"
+  },
+  {
+    "code": "YEY",
+    "name": "Amos/Magny Airport"
+  },
+  {
+    "code": "YFB",
+    "name": "Iqaluit Airport"
+  },
+  {
+    "code": "YFC",
+    "name": "Fredericton Airport"
+  },
+  {
+    "code": "YFE",
+    "name": "Forestville Airport"
+  },
+  {
+    "code": "YTM",
+    "name": "Mont-Tremblant International Airport"
+  },
+  {
+    "code": "YFR",
+    "name": "Fort Resolution Airport"
+  },
+  {
+    "code": "YFS",
+    "name": "Fort Simpson Airport"
+  },
+  {
+    "code": "YGK",
+    "name": "Kingston Norman Rogers Airport"
+  },
+  {
+    "code": "YGL",
+    "name": "La Grande Rivière Airport"
+  },
+  {
+    "code": "YGM",
+    "name": "Gimli Industrial Park Airport"
+  },
+  {
+    "code": "YGP",
+    "name": "Michel-Pouliot Gaspé Airport"
+  },
+  {
+    "code": "YGQ",
+    "name": "Geraldton Greenstone Regional Airport"
+  },
+  {
+    "code": "YGR",
+    "name": "Îles-de-la-Madeleine Airport"
+  },
+  {
+    "code": "YGV",
+    "name": "Havre-Saint-Pierre Airport"
+  },
+  {
+    "code": "YGW",
+    "name": "Kuujjuarapik Airport"
+  },
+  {
+    "code": "YHD",
+    "name": "Dryden Regional Airport"
+  },
+  {
+    "code": "YHF",
+    "name": "Hearst René Fontaine Municipal Airport"
+  },
+  {
+    "code": "YHM",
+    "name": "John C. Munro Hamilton International Airport"
+  },
+  {
+    "code": "YHN",
+    "name": "Hornepayne Municipal Airport"
+  },
+  {
+    "code": "YHT",
+    "name": "Haines Junction Airport"
+  },
+  {
+    "code": "YHU",
+    "name": "Montréal / Saint-Hubert Metropolitan Airport"
+  },
+  {
+    "code": "YHY",
+    "name": "Hay River / Merlyn Carter Airport"
+  },
+  {
+    "code": "YHZ",
+    "name": "Halifax / Stanfield International Airport"
+  },
+  {
+    "code": "YIB",
+    "name": "Atikokan Municipal Airport"
+  },
+  {
+    "code": "YDG",
+    "name": "Digby / Annapolis Regional Airport"
+  },
+  {
+    "code": "YIF",
+    "name": "St Augustin Airport"
+  },
+  {
+    "code": "YIV",
+    "name": "Island Lake Airport"
+  },
+  {
+    "code": "YJF",
+    "name": "Fort Liard Airport"
+  },
+  {
+    "code": "YJN",
+    "name": "St Jean Airport"
+  },
+  {
+    "code": "YJT",
+    "name": "Dymond Airport"
+  },
+  {
+    "code": "YKA",
+    "name": "Kamloops John Moose Fulton Field Regional Airport"
+  },
+  {
+    "code": "YKF",
+    "name": "Region of Waterloo International Airport"
+  },
+  {
+    "code": "YKJ",
+    "name": "Key Lake Airport"
+  },
+  {
+    "code": "YKL",
+    "name": "Schefferville Airport"
+  },
+  {
+    "code": "YKD",
+    "name": "Kincardine Municipal Airport"
+  },
+  {
+    "code": "YKX",
+    "name": "Kirkland Lake Airport"
+  },
+  {
+    "code": "YKY",
+    "name": "Kindersley Airport"
+  },
+  {
+    "code": "YLD",
+    "name": "Chapleau Airport"
+  },
+  {
+    "code": "YLJ",
+    "name": "Meadow Lake Airport"
+  },
+  {
+    "code": "YLL",
+    "name": "Lloydminster Airport"
+  },
+  {
+    "code": "YLR",
+    "name": "Leaf Rapids Airport"
+  },
+  {
+    "code": "YLK",
+    "name": "Barrie-Lake Simcoe Regional Airport"
+  },
+  {
+    "code": "YLT",
+    "name": "Alert Airport"
+  },
+  {
+    "code": "YLW",
+    "name": "Kelowna International Airport"
+  },
+  {
+    "code": "YMA",
+    "name": "Mayo Airport"
+  },
+  {
+    "code": "YME",
+    "name": "Matane Airport"
+  },
+  {
+    "code": "YMG",
+    "name": "Manitouwadge Airport"
+  },
+  {
+    "code": "YMJ",
+    "name": "Moose Jaw Air Vice Marshal C. M. McEwen Airport"
+  },
+  {
+    "code": "YML",
+    "name": "Charlevoix Airport"
+  },
+  {
+    "code": "YMM",
+    "name": "Fort McMurray Airport"
+  },
+  {
+    "code": "YMO",
+    "name": "Moosonee Airport"
+  },
+  {
+    "code": "YMT",
+    "name": "Chapais Airport"
+  },
+  {
+    "code": "YMX",
+    "name": "Montreal International (Mirabel) Airport"
+  },
+  {
+    "code": "YNA",
+    "name": "Natashquan Airport"
+  },
+  {
+    "code": "YND",
+    "name": "Ottawa / Gatineau Airport"
+  },
+  {
+    "code": "YLY",
+    "name": "Langley Airport"
+  },
+  {
+    "code": "YNL",
+    "name": "Points North Landing Airport"
+  },
+  {
+    "code": "YNM",
+    "name": "Matagami Airport"
+  },
+  {
+    "code": "YOA",
+    "name": "Ekati Airport"
+  },
+  {
+    "code": "YOD",
+    "name": "CFB Cold Lake"
+  },
+  {
+    "code": "YOJ",
+    "name": "High Level Airport"
+  },
+  {
+    "code": "YOO",
+    "name": "Oshawa Executive Airport"
+  },
+  {
+    "code": "YOP",
+    "name": "Rainbow Lake Airport"
+  },
+  {
+    "code": "YOS",
+    "name": "Owen Sound / Billy Bishop Regional Airport"
+  },
+  {
+    "code": "YOW",
+    "name": "Ottawa Macdonald-Cartier International Airport"
+  },
+  {
+    "code": "YPA",
+    "name": "Prince Albert Glass Field"
+  },
+  {
+    "code": "YPS",
+    "name": "Port Hawkesbury Airport"
+  },
+  {
+    "code": "YPE",
+    "name": "Peace River Airport"
+  },
+  {
+    "code": "YPG",
+    "name": "Portage-la-Prairie / Southport Airport"
+  },
+  {
+    "code": "YPL",
+    "name": "Pickle Lake Airport"
+  },
+  {
+    "code": "YPN",
+    "name": "Port-Menier Airport"
+  },
+  {
+    "code": "YPQ",
+    "name": "Peterborough Municipal Airport"
+  },
+  {
+    "code": "YPR",
+    "name": "Prince Rupert Airport"
+  },
+  {
+    "code": "YPW",
+    "name": "Powell River Airport"
+  },
+  {
+    "code": "YPX",
+    "name": "Puvirnituq Airport"
+  },
+  {
+    "code": "YPY",
+    "name": "Fort Chipewyan Airport"
+  },
+  {
+    "code": "YPZ",
+    "name": "Burns Lake Airport"
+  },
+  {
+    "code": "YQA",
+    "name": "Muskoka Airport"
+  },
+  {
+    "code": "YQB",
+    "name": "Quebec Jean Lesage International Airport"
+  },
+  {
+    "code": "YQD",
+    "name": "The Pas Airport"
+  },
+  {
+    "code": "YQF",
+    "name": "Red Deer Regional Airport"
+  },
+  {
+    "code": "YQG",
+    "name": "Windsor Airport"
+  },
+  {
+    "code": "YQH",
+    "name": "Watson Lake Airport"
+  },
+  {
+    "code": "YQI",
+    "name": "Yarmouth Airport"
+  },
+  {
+    "code": "YQK",
+    "name": "Kenora Airport"
+  },
+  {
+    "code": "YQL",
+    "name": "Lethbridge County Airport"
+  },
+  {
+    "code": "YQM",
+    "name": "Greater Moncton Roméo LeBlanc International Airport"
+  },
+  {
+    "code": "YQN",
+    "name": "Nakina Airport"
+  },
+  {
+    "code": "YQQ",
+    "name": "Comox Valley Airport / CFB Comox"
+  },
+  {
+    "code": "YQR",
+    "name": "Regina International Airport"
+  },
+  {
+    "code": "YQS",
+    "name": "St Thomas Municipal Airport"
+  },
+  {
+    "code": "YQT",
+    "name": "Thunder Bay Airport"
+  },
+  {
+    "code": "YQU",
+    "name": "Grande Prairie Airport"
+  },
+  {
+    "code": "YQV",
+    "name": "Yorkton Municipal Airport"
+  },
+  {
+    "code": "YQW",
+    "name": "North Battleford Airport"
+  },
+  {
+    "code": "YQX",
+    "name": "Gander International Airport / CFB Gander"
+  },
+  {
+    "code": "YQY",
+    "name": "Sydney / J.A. Douglas McCurdy Airport"
+  },
+  {
+    "code": "YQZ",
+    "name": "Quesnel Airport"
+  },
+  {
+    "code": "YRB",
+    "name": "Resolute Bay Airport"
+  },
+  {
+    "code": "YRI",
+    "name": "Rivière-du-Loup Airport"
+  },
+  {
+    "code": "YRJ",
+    "name": "Roberval Airport"
+  },
+  {
+    "code": "YRL",
+    "name": "Red Lake Airport"
+  },
+  {
+    "code": "YRO",
+    "name": "Ottawa / Rockcliffe Airport"
+  },
+  {
+    "code": "YRQ",
+    "name": "Trois-Rivières Airport"
+  },
+  {
+    "code": "YRT",
+    "name": "Rankin Inlet Airport"
+  },
+  {
+    "code": "YRV",
+    "name": "Revelstoke Airport"
+  },
+  {
+    "code": "YSB",
+    "name": "Sudbury Airport"
+  },
+  {
+    "code": "YSC",
+    "name": "Sherbrooke Airport"
+  },
+  {
+    "code": "YSF",
+    "name": "Stony Rapids Airport"
+  },
+  {
+    "code": "YSH",
+    "name": "Smiths Falls-Montague (Russ Beach) Airport"
+  },
+  {
+    "code": "YSJ",
+    "name": "Saint John Airport"
+  },
+  {
+    "code": "YSL",
+    "name": "Saint-Léonard Airport"
+  },
+  {
+    "code": "YSM",
+    "name": "Fort Smith Airport"
+  },
+  {
+    "code": "YCM",
+    "name": "Niagara District Airport"
+  },
+  {
+    "code": "YSP",
+    "name": "Marathon Airport"
+  },
+  {
+    "code": "YSU",
+    "name": "Summerside Airport"
+  },
+  {
+    "code": "YTA",
+    "name": "Pembroke Airport"
+  },
+  {
+    "code": "YTF",
+    "name": "Alma Airport"
+  },
+  {
+    "code": "YTH",
+    "name": "Thompson Airport"
+  },
+  {
+    "code": "YTR",
+    "name": "CFB Trenton"
+  },
+  {
+    "code": "YTS",
+    "name": "Timmins/Victor M. Power"
+  },
+  {
+    "code": "YTZ",
+    "name": "Billy Bishop Toronto City Centre Airport"
+  },
+  {
+    "code": "YUL",
+    "name": "Montreal / Pierre Elliott Trudeau International Airport"
+  },
+  {
+    "code": "YUX",
+    "name": "Hall Beach Airport"
+  },
+  {
+    "code": "YUY",
+    "name": "Rouyn Noranda Airport"
+  },
+  {
+    "code": "YVB",
+    "name": "Bonaventure Airport"
+  },
+  {
+    "code": "YVC",
+    "name": "La Ronge Airport"
+  },
+  {
+    "code": "YVE",
+    "name": "Vernon Regional Airport"
+  },
+  {
+    "code": "YVO",
+    "name": "Val-d'Or Airport"
+  },
+  {
+    "code": "YVP",
+    "name": "Kuujjuaq Airport"
+  },
+  {
+    "code": "YVQ",
+    "name": "Norman Wells Airport"
+  },
+  {
+    "code": "YVR",
+    "name": "Vancouver International Airport"
+  },
+  {
+    "code": "YVV",
+    "name": "Wiarton Airport"
+  },
+  {
+    "code": "YWG",
+    "name": "Winnipeg / James Armstrong Richardson International Airport"
+  },
+  {
+    "code": "YWK",
+    "name": "Wabush Airport"
+  },
+  {
+    "code": "YWL",
+    "name": "Williams Lake Airport"
+  },
+  {
+    "code": "YWY",
+    "name": "Wrigley Airport"
+  },
+  {
+    "code": "YXC",
+    "name": "Cranbrook/Canadian Rockies International Airport"
+  },
+  {
+    "code": "YXE",
+    "name": "Saskatoon John G. Diefenbaker International Airport"
+  },
+  {
+    "code": "YXH",
+    "name": "Medicine Hat Regional Airport"
+  },
+  {
+    "code": "YXJ",
+    "name": "Fort St John / North Peace Regional Airport"
+  },
+  {
+    "code": "YXK",
+    "name": "Rimouski Airport"
+  },
+  {
+    "code": "YXL",
+    "name": "Sioux Lookout Airport"
+  },
+  {
+    "code": "YXQ",
+    "name": "Beaver Creek Airport"
+  },
+  {
+    "code": "YXR",
+    "name": "Earlton (Timiskaming Regional) Airport"
+  },
+  {
+    "code": "YXS",
+    "name": "Prince George Airport"
+  },
+  {
+    "code": "YXT",
+    "name": "Northwest Regional Airport Terrace-Kitimat"
+  },
+  {
+    "code": "YXU",
+    "name": "London Airport"
+  },
+  {
+    "code": "YXX",
+    "name": "Abbotsford International Airport"
+  },
+  {
+    "code": "YXY",
+    "name": "Whitehorse / Erik Nielsen International Airport"
+  },
+  {
+    "code": "YXZ",
+    "name": "Wawa Airport"
+  },
+  {
+    "code": "YYB",
+    "name": "North Bay Jack Garland Airport"
+  },
+  {
+    "code": "YYC",
+    "name": "Calgary International Airport"
+  },
+  {
+    "code": "YYD",
+    "name": "Smithers Airport"
+  },
+  {
+    "code": "YYE",
+    "name": "Fort Nelson Airport"
+  },
+  {
+    "code": "YYF",
+    "name": "Penticton Airport"
+  },
+  {
+    "code": "YYG",
+    "name": "Charlottetown Airport"
+  },
+  {
+    "code": "YYJ",
+    "name": "Victoria International Airport"
+  },
+  {
+    "code": "YYL",
+    "name": "Lynn Lake Airport"
+  },
+  {
+    "code": "YYN",
+    "name": "Swift Current Airport"
+  },
+  {
+    "code": "YYQ",
+    "name": "Churchill Airport"
+  },
+  {
+    "code": "YYR",
+    "name": "Goose Bay Airport"
+  },
+  {
+    "code": "YYT",
+    "name": "St. John's International Airport"
+  },
+  {
+    "code": "YYU",
+    "name": "Kapuskasing Airport"
+  },
+  {
+    "code": "YYW",
+    "name": "Armstrong Airport"
+  },
+  {
+    "code": "YYY",
+    "name": "Mont Joli Airport"
+  },
+  {
+    "code": "YYZ",
+    "name": "Toronto Lester B. Pearson International Airport"
+  },
+  {
+    "code": "YZE",
+    "name": "Gore Bay Manitoulin Airport"
+  },
+  {
+    "code": "YZF",
+    "name": "Yellowknife International Airport"
+  },
+  {
+    "code": "YZH",
+    "name": "Slave Lake Airport"
+  },
+  {
+    "code": "YZP",
+    "name": "Sandspit Airport"
+  },
+  {
+    "code": "YZR",
+    "name": "Chris Hadfield Airport"
+  },
+  {
+    "code": "YZS",
+    "name": "Coral Harbour Airport"
+  },
+  {
+    "code": "YZT",
+    "name": "Port Hardy Airport"
+  },
+  {
+    "code": "YZU",
+    "name": "Whitecourt Airport"
+  },
+  {
+    "code": "YZV",
+    "name": "Sept-Îles Airport"
+  },
+  {
+    "code": "YZW",
+    "name": "Teslin Airport"
+  },
+  {
+    "code": "YZX",
+    "name": "CFB Greenwood"
+  },
+  {
+    "code": "YSN",
+    "name": "Shuswap Regional Airport"
+  },
+  {
+    "code": "YDT",
+    "name": "Boundary Bay Airport"
+  },
+  {
+    "code": "ZBF",
+    "name": "Bathurst Airport"
+  },
+  {
+    "code": "ZBM",
+    "name": "Bromont (Roland Désourdy) Airport"
+  },
+  {
+    "code": "KES",
+    "name": "Kelsey Airport"
+  },
+  {
+    "code": "ZFA",
+    "name": "Faro Airport"
+  },
+  {
+    "code": "ZGF",
+    "name": "Grand Forks Airport"
+  },
+  {
+    "code": "ZJG",
+    "name": "Jenpeg Airport"
+  },
+  {
+    "code": "ZJN",
+    "name": "Swan River Airport"
+  },
+  {
+    "code": "YTD",
+    "name": "Thicket Portage Airport"
+  },
+  {
+    "code": "PIW",
+    "name": "Pikwitonei Airport"
+  },
+  {
+    "code": "ZMT",
+    "name": "Masset Airport"
+  },
+  {
+    "code": "WPC",
+    "name": "Pincher Creek Airport"
+  },
+  {
+    "code": "ZSJ",
+    "name": "Sandy Lake Airport"
+  },
+  {
+    "code": "ZST",
+    "name": "Stewart Airport"
+  },
+  {
+    "code": "ZUC",
+    "name": "Ignace Municipal Airport"
+  },
+  {
+    "code": "BUJ",
+    "name": "Bou Saada Airport"
+  },
+  {
+    "code": "BJA",
+    "name": "Soummam–Abane Ramdane Airport"
+  },
+  {
+    "code": "ALG",
+    "name": "Houari Boumediene Airport"
+  },
+  {
+    "code": "DJG",
+    "name": "Djanet Inedbirene Airport"
+  },
+  {
+    "code": "VVZ",
+    "name": "Illizi Takhamalt Airport"
+  },
+  {
+    "code": "QSF",
+    "name": "Ain Arnat Airport"
+  },
+  {
+    "code": "TMR",
+    "name": "Aguenar – Hadj Bey Akhamok Airport"
+  },
+  {
+    "code": "GJL",
+    "name": "Jijel Ferhat Abbas Airport"
+  },
+  {
+    "code": "MZW",
+    "name": "Mecheria Airport"
+  },
+  {
+    "code": "AAE",
+    "name": "Annaba Rabah Bitat Airport"
+  },
+  {
+    "code": "CZL",
+    "name": "Mohamed Boudiaf International Airport"
+  },
+  {
+    "code": "TEE",
+    "name": "Cheikh Larbi Tébessi Airport"
+  },
+  {
+    "code": "BLJ",
+    "name": "Batna Mostefa Ben Boulaid Airport"
+  },
+  {
+    "code": "HRM",
+    "name": "Hassi R'Mel Airport"
+  },
+  {
+    "code": "TID",
+    "name": "Abdelhafid Boussouf Bou Chekif Airport"
+  },
+  {
+    "code": "TIN",
+    "name": "Tindouf Airport"
+  },
+  {
+    "code": "CFK",
+    "name": "Chlef Aboubakr Belkaid International Airport"
+  },
+  {
+    "code": "TAF",
+    "name": "Oran Tafraoui Airport"
+  },
+  {
+    "code": "TLM",
+    "name": "Zenata – Messali El Hadj Airport"
+  },
+  {
+    "code": "ORN",
+    "name": "Oran Es-Sénia (Ahmed Ben Bella) International Airport"
+  },
+  {
+    "code": "CBH",
+    "name": "Béchar Boudghene Ben Ali Lotfi Airport"
+  },
+  {
+    "code": "MUW",
+    "name": "Ghriss Airport"
+  },
+  {
+    "code": "AZR",
+    "name": "Touat Cheikh Sidi Mohamed Belkebir Airport"
+  },
+  {
+    "code": "BSK",
+    "name": "Biskra - Mohamed Khider Airport"
+  },
+  {
+    "code": "ELG",
+    "name": "El Golea Airport"
+  },
+  {
+    "code": "GHA",
+    "name": "Noumérat - Moufdi Zakaria Airport"
+  },
+  {
+    "code": "HME",
+    "name": "Hassi Messaoud-Oued Irara Krim Belkacem Airport"
+  },
+  {
+    "code": "INZ",
+    "name": "In Salah Airport"
+  },
+  {
+    "code": "TGR",
+    "name": "Touggourt Sidi Madhi Airport"
+  },
+  {
+    "code": "LOO",
+    "name": "Laghouat - Molay Ahmed Medeghri Airport"
+  },
+  {
+    "code": "ELU",
+    "name": "Guemar Airport - مطار قمار بالوادي"
+  },
+  {
+    "code": "TMX",
+    "name": "Timimoun Airport"
+  },
+  {
+    "code": "OGX",
+    "name": "Ain Beida Airport"
+  },
+  {
+    "code": "IAM",
+    "name": "Zarzaitine - In Aménas Airport"
+  },
+  {
+    "code": "COO",
+    "name": "Cadjehoun Airport"
+  },
+  {
+    "code": "OUA",
+    "name": "Ouagadougou Airport"
+  },
+  {
+    "code": "BOY",
+    "name": "Bobo Dioulasso Airport"
+  },
+  {
+    "code": "ACC",
+    "name": "Kotoka International Airport"
+  },
+  {
+    "code": "TML",
+    "name": "Tamale Airport"
+  },
+  {
+    "code": "KMS",
+    "name": "Kumasi Airport"
+  },
+  {
+    "code": "NYI",
+    "name": "Sunyani Airport"
+  },
+  {
+    "code": "TKD",
+    "name": "Takoradi Airport"
+  },
+  {
+    "code": "ABJ",
+    "name": "Félix-Houphouët-Boigny International Airport"
+  },
+  {
+    "code": "BYK",
+    "name": "Bouaké Airport"
+  },
+  {
+    "code": "DJO",
+    "name": "Daloa Airport"
+  },
+  {
+    "code": "HGO",
+    "name": "Korhogo Airport"
+  },
+  {
+    "code": "MJC",
+    "name": "Man Airport"
+  },
+  {
+    "code": "SPY",
+    "name": "San Pedro Airport"
+  },
+  {
+    "code": "ASK",
+    "name": "Yamoussoukro Airport"
+  },
+  {
+    "code": "ABV",
+    "name": "Nnamdi Azikiwe International Airport"
+  },
+  {
+    "code": "QUO",
+    "name": "Akwa Ibom International Airport"
+  },
+  {
+    "code": "AKR",
+    "name": "Akure Airport"
+  },
+  {
+    "code": "ABB",
+    "name": "Asaba International Airport"
+  },
+  {
+    "code": "BCU",
+    "name": "Sir Abubakar Tafawa Balewa International Airport"
+  },
+  {
+    "code": "BNI",
+    "name": "Benin Airport"
+  },
+  {
+    "code": "CBQ",
+    "name": "Margaret Ekpo International Airport"
+  },
+  {
+    "code": "ENU",
+    "name": "Akanu Ibiam International Airport"
+  },
+  {
+    "code": "GMO",
+    "name": "Gombe Lawanti International Airport"
+  },
+  {
+    "code": "IBA",
+    "name": "Ibadan Airport"
+  },
+  {
+    "code": "ILR",
+    "name": "Ilorin International Airport"
+  },
+  {
+    "code": "QOW",
+    "name": "Sam Mbakwe International Airport"
+  },
+  {
+    "code": "JOS",
+    "name": "Yakubu Gowon Airport"
+  },
+  {
+    "code": "KAD",
+    "name": "Kaduna Airport"
+  },
+  {
+    "code": "KAN",
+    "name": "Mallam Aminu International Airport"
+  },
+  {
+    "code": "MIU",
+    "name": "Maiduguri International Airport"
+  },
+  {
+    "code": "MDI",
+    "name": "Makurdi Airport"
+  },
+  {
+    "code": "LOS",
+    "name": "Murtala Muhammed International Airport"
+  },
+  {
+    "code": "MXJ",
+    "name": "Minna Airport"
+  },
+  {
+    "code": "PHC",
+    "name": "Port Harcourt International Airport"
+  },
+  {
+    "code": "SKO",
+    "name": "Sadiq Abubakar III International Airport"
+  },
+  {
+    "code": "QRW",
+    "name": "Warri Airport"
+  },
+  {
+    "code": "YOL",
+    "name": "Yola Airport"
+  },
+  {
+    "code": "ZAR",
+    "name": "Zaria Airport"
+  },
+  {
+    "code": "MFQ",
+    "name": "Maradi Airport"
+  },
+  {
+    "code": "NIM",
+    "name": "Diori Hamani International Airport"
+  },
+  {
+    "code": "THZ",
+    "name": "Tahoua Airport"
+  },
+  {
+    "code": "AJY",
+    "name": "Mano Dayak International Airport"
+  },
+  {
+    "code": "ZND",
+    "name": "Zinder Airport"
+  },
+  {
+    "code": "TBJ",
+    "name": "Tabarka-Aïn Draham International Airport"
+  },
+  {
+    "code": "MIR",
+    "name": "Monastir Habib Bourguiba International Airport"
+  },
+  {
+    "code": "NBE",
+    "name": "Enfidha - Hammamet International Airport"
+  },
+  {
+    "code": "TUN",
+    "name": "Tunis Carthage International Airport"
+  },
+  {
+    "code": "GAF",
+    "name": "Gafsa Ksar International Airport"
+  },
+  {
+    "code": "GAE",
+    "name": "Gabès Matmata International Airport"
+  },
+  {
+    "code": "DJE",
+    "name": "Djerba Zarzis International Airport"
+  },
+  {
+    "code": "EBM",
+    "name": "El Borma Airport"
+  },
+  {
+    "code": "SFA",
+    "name": "Sfax Thyna International Airport"
+  },
+  {
+    "code": "TOE",
+    "name": "Tozeur Nefta International Airport"
+  },
+  {
+    "code": "LRL",
+    "name": "Niamtougou International Airport"
+  },
+  {
+    "code": "LFW",
+    "name": "Lomé–Tokoin International Airport"
+  },
+  {
+    "code": "ANR",
+    "name": "Antwerp International Airport (Deurne)"
+  },
+  {
+    "code": "BRU",
+    "name": "Brussels Airport"
+  },
+  {
+    "code": "CRL",
+    "name": "Brussels South Charleroi Airport"
+  },
+  {
+    "code": "KJK",
+    "name": "Flanders International Airport Kortrijk-Wevelgem"
+  },
+  {
+    "code": "LGG",
+    "name": "Liège Airport"
+  },
+  {
+    "code": "OST",
+    "name": "Oostende-Brugge International Airport"
+  },
+  {
+    "code": "AOC",
+    "name": "Leipzig–Altenburg Airport"
+  },
+  {
+    "code": "HDF",
+    "name": "Heringsdorf Airport"
+  },
+  {
+    "code": "FNB",
+    "name": "Neubrandenburg Trollenhagen Airport"
+  },
+  {
+    "code": "BER",
+    "name": "Berlin Brandenburg Airport"
+  },
+  {
+    "code": "DRS",
+    "name": "Dresden Airport"
+  },
+  {
+    "code": "ERF",
+    "name": "Erfurt-Weimar Airport"
+  },
+  {
+    "code": "FRA",
+    "name": "Frankfurt Airport"
+  },
+  {
+    "code": "FMO",
+    "name": "Münster Osnabrück Airport"
+  },
+  {
+    "code": "HAM",
+    "name": "Hamburg Helmut Schmidt Airport"
+  },
+  {
+    "code": "CGN",
+    "name": "Cologne Bonn Airport"
+  },
+  {
+    "code": "DUS",
+    "name": "Düsseldorf Airport"
+  },
+  {
+    "code": "MUC",
+    "name": "Munich Airport"
+  },
+  {
+    "code": "NUE",
+    "name": "Nuremberg Airport"
+  },
+  {
+    "code": "LEJ",
+    "name": "Leipzig/Halle Airport"
+  },
+  {
+    "code": "SCN",
+    "name": "Saarbrücken Airport"
+  },
+  {
+    "code": "STR",
+    "name": "Stuttgart Airport"
+  },
+  {
+    "code": "HAJ",
+    "name": "Hannover Airport"
+  },
+  {
+    "code": "BRE",
+    "name": "Bremen Airport"
+  },
+  {
+    "code": "HHN",
+    "name": "Frankfurt-Hahn Airport"
+  },
+  {
+    "code": "MHG",
+    "name": "Mannheim-City Airport"
+  },
+  {
+    "code": "EIB",
+    "name": "Eisenach-Kindel Airport"
+  },
+  {
+    "code": "SGE",
+    "name": "Siegerland Airport"
+  },
+  {
+    "code": "XFW",
+    "name": "Hamburg-Finkenwerder Airport"
+  },
+  {
+    "code": "KEL",
+    "name": "Kiel-Holtenau Airport"
+  },
+  {
+    "code": "LBC",
+    "name": "Lübeck Blankensee Airport"
+  },
+  {
+    "code": "FMM",
+    "name": "Memmingen Allgau Airport"
+  },
+  {
+    "code": "MGL",
+    "name": "Mönchengladbach Airport"
+  },
+  {
+    "code": "PAD",
+    "name": "Paderborn Lippstadt Airport"
+  },
+  {
+    "code": "NRN",
+    "name": "Weeze Airport"
+  },
+  {
+    "code": "DTM",
+    "name": "Dortmund Airport"
+  },
+  {
+    "code": "AGB",
+    "name": "Augsburg Airport"
+  },
+  {
+    "code": "OBF",
+    "name": "Oberpfaffenhofen Airport"
+  },
+  {
+    "code": "FDH",
+    "name": "Friedrichshafen Airport"
+  },
+  {
+    "code": "BYU",
+    "name": "Bayreuth Airport"
+  },
+  {
+    "code": "HOQ",
+    "name": "Hof-Plauen Airport"
+  },
+  {
+    "code": "FKB",
+    "name": "Karlsruhe Baden-Baden Airport"
+  },
+  {
+    "code": "LHA",
+    "name": "Lahr Airport"
+  },
+  {
+    "code": "BWE",
+    "name": "Braunschweig-Wolfsburg Airport"
+  },
+  {
+    "code": "KSF",
+    "name": "Kassel Airport"
+  },
+  {
+    "code": "GWT",
+    "name": "Westerland Sylt Airport"
+  },
+  {
+    "code": "KDL",
+    "name": "Kärdla Airport"
+  },
+  {
+    "code": "URE",
+    "name": "Kuressaare Airport"
+  },
+  {
+    "code": "EPU",
+    "name": "Pärnu Airport"
+  },
+  {
+    "code": "EES",
+    "name": "Berenice International Airport / Banas Cape Air Base"
+  },
+  {
+    "code": "TLL",
+    "name": "Lennart Meri Tallinn Airport"
+  },
+  {
+    "code": "TAY",
+    "name": "Tartu Airport"
+  },
+  {
+    "code": "ENF",
+    "name": "Enontekio Airport"
+  },
+  {
+    "code": "KEV",
+    "name": "Halli Airport"
+  },
+  {
+    "code": "HEL",
+    "name": "Helsinki Vantaa Airport"
+  },
+  {
+    "code": "KTQ",
+    "name": "Kitee Airport"
+  },
+  {
+    "code": "IVL",
+    "name": "Ivalo Airport"
+  },
+  {
+    "code": "JOE",
+    "name": "Joensuu Airport"
+  },
+  {
+    "code": "JYV",
+    "name": "Jyväskylä Airport"
+  },
+  {
+    "code": "KAU",
+    "name": "Kauhava Airfield"
+  },
+  {
+    "code": "KEM",
+    "name": "Kemi-Tornio Airport"
+  },
+  {
+    "code": "KAJ",
+    "name": "Kajaani Airport"
+  },
+  {
+    "code": "KHJ",
+    "name": "Kauhajoki Airfield"
+  },
+  {
+    "code": "KOK",
+    "name": "Kokkola-Pietarsaari Airport"
+  },
+  {
+    "code": "KAO",
+    "name": "Kuusamo Airport"
+  },
+  {
+    "code": "KTT",
+    "name": "Kittilä Airport"
+  },
+  {
+    "code": "KUO",
+    "name": "Kuopio Airport"
+  },
+  {
+    "code": "LPP",
+    "name": "Lappeenranta Airport"
+  },
+  {
+    "code": "MHQ",
+    "name": "Mariehamn Airport"
+  },
+  {
+    "code": "MIK",
+    "name": "Mikkeli Airport"
+  },
+  {
+    "code": "OUL",
+    "name": "Oulu Airport"
+  },
+  {
+    "code": "POR",
+    "name": "Pori Airport"
+  },
+  {
+    "code": "RVN",
+    "name": "Rovaniemi Airport"
+  },
+  {
+    "code": "SVL",
+    "name": "Savonlinna Airport"
+  },
+  {
+    "code": "SJY",
+    "name": "Seinäjoki Airport"
+  },
+  {
+    "code": "SOT",
+    "name": "Sodankyla Airport"
+  },
+  {
+    "code": "TMP",
+    "name": "Tampere-Pirkkala Airport"
+  },
+  {
+    "code": "TKU",
+    "name": "Turku Airport"
+  },
+  {
+    "code": "UTI",
+    "name": "Utti Air Base"
+  },
+  {
+    "code": "VAA",
+    "name": "Vaasa Airport"
+  },
+  {
+    "code": "VRK",
+    "name": "Varkaus Airport"
+  },
+  {
+    "code": "YLI",
+    "name": "Ylivieska Airfield"
+  },
+  {
+    "code": "BFS",
+    "name": "Belfast International Airport"
+  },
+  {
+    "code": "ENK",
+    "name": "Enniskillen/St Angelo Airport"
+  },
+  {
+    "code": "BHD",
+    "name": "George Best Belfast City Airport"
+  },
+  {
+    "code": "LDY",
+    "name": "City of Derry Airport"
+  },
+  {
+    "code": "BHX",
+    "name": "Birmingham Airport"
+  },
+  {
+    "code": "CVT",
+    "name": "Coventry Airport"
+  },
+  {
+    "code": "GLO",
+    "name": "Gloucestershire Airport"
+  },
+  {
+    "code": "NQT",
+    "name": "Nottingham City Airport"
+  },
+  {
+    "code": "MAN",
+    "name": "Manchester Airport"
+  },
+  {
+    "code": "YEO",
+    "name": "RNAS Yeovilton"
+  },
+  {
+    "code": "CAL",
+    "name": "Campbeltown Airport"
+  },
+  {
+    "code": "EOI",
+    "name": "Eday Airport"
+  },
+  {
+    "code": "HAW",
+    "name": "Haverfordwest Airport"
+  },
+  {
+    "code": "CWL",
+    "name": "Cardiff International Airport"
+  },
+  {
+    "code": "SWS",
+    "name": "Swansea Airport"
+  },
+  {
+    "code": "BRS",
+    "name": "Bristol Airport"
+  },
+  {
+    "code": "LPL",
+    "name": "Liverpool John Lennon Airport"
+  },
+  {
+    "code": "LTN",
+    "name": "London Luton Airport"
+  },
+  {
+    "code": "BOH",
+    "name": "Bournemouth Airport"
+  },
+  {
+    "code": "SOU",
+    "name": "Southampton Airport"
+  },
+  {
+    "code": "NQY",
+    "name": "Cornwall Airport Newquay"
+  },
+  {
+    "code": "ACI",
+    "name": "Alderney Airport"
+  },
+  {
+    "code": "GCI",
+    "name": "Guernsey Airport"
+  },
+  {
+    "code": "JER",
+    "name": "Jersey Airport"
+  },
+  {
+    "code": "ESH",
+    "name": "Brighton City Airport"
+  },
+  {
+    "code": "BQH",
+    "name": "London Biggin Hill Airport"
+  },
+  {
+    "code": "LGW",
+    "name": "London Gatwick Airport"
+  },
+  {
+    "code": "LCY",
+    "name": "London City Airport"
+  }
+]

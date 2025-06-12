@@ -42,11 +42,28 @@
         <form id="add-watch-form">
           <label>
             Origin (IATA Code):
-            <input type="text" id="origin-input" placeholder="e.g. JFK" maxlength="3" required />
+            <div class="autocomplete">
+              <input type="text"
+                     id="origin-input"
+                     placeholder="e.g. JFK"
+                     maxlength="3"
+                     autocomplete="off"
+                     required />
+              <ul class="suggestions" id="origin-suggestions"></ul>
+            </div>
           </label>
+
           <label>
             Destination (IATA Code):
-            <input type="text" id="destination-input" placeholder="e.g. LHR" maxlength="3" required />
+            <div class="autocomplete">
+              <input type="text"
+                     id="destination-input"
+                     placeholder="e.g. LHR"
+                     maxlength="3"
+                     autocomplete="off"
+                     required />
+              <ul class="suggestions" id="destination-suggestions"></ul>
+            </div>
           </label>
           <label>
             Departure Date:
@@ -83,5 +100,7 @@
   <script type="module" src="js/flightApi.js"></script>
   <!-- 2) watches.js contains UI + localStorage logic + charts -->
   <script type="module" src="js/watches.js"></script>
+  <!-- 3) autocomplete.js adds IATA dropdowns -->
+  <script type="module" src="js/autocomplete.js"></script>
 </body>
 </html>
