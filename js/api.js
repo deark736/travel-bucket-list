@@ -44,8 +44,10 @@ export async function getCountryByName(name) {
 
 // Fetch all countries (for random selection)
 export async function getAllCountries() {
-  const response = await fetch(`${REST_COUNTRIES_BASE}/all`);
+  const url = `${REST_COUNTRIES_BASE}/all?fields=name,flags,capital,region,latlng,currencies,population`;
+  const response = await fetch(url);
   if (!response.ok) {
+    console.error("Countries fetch failed:", response.status, response.statusText);
     throw new Error("Error fetching country list");
   }
   return response.json();
