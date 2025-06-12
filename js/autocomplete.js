@@ -2,7 +2,7 @@
 let AIRPORTS = [];
 
 // 1) Load the JSON once
-fetch('/data/airports.json')
+fetch('./data/airports.json')
   .then(resp => resp.json())
   .then(data => { AIRPORTS = data; })
   .catch(err => console.error('Could not load airports.json', err));
