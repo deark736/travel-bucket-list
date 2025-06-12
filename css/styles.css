@@ -41,6 +41,58 @@ textarea {
   line-height: 1.6;
 }
 
+@media (hover: hover) and (pointer: fine) {
+  /* Button hover fade */
+  button:hover {
+    transition: background 0.3s;
+  }
+
+  /* Index/Wishlist page link underlines */
+  nav a:hover,
+  .sidebar a:hover {
+    text-decoration: underline;
+  }
+
+  /* Clear-wishlist button */
+  #clear-wishlist-btn:hover {
+    background: #7a2727;
+  }
+
+  /* Country-card scale + shadow */
+  .country-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+
+  /* Flags: desaturate by default, restore on hover */
+  .country-card img {
+    filter: saturate(60%);
+    transition: filter 0.3s, opacity 0.3s;
+  }
+  .country-card:hover img {
+    filter: saturate(100%);
+    opacity: 1;
+  }
+
+  /* Wishlist buttons */
+  .add-btn:hover,
+  #search-form button:hover,
+  #add-watch-form button:hover {
+    background: #7A2F00;
+  }
+  .remove-full-btn:hover,
+  .remove-btn:hover,
+  .remove-watch-btn:hover {
+    background: #7a2727;
+  }
+
+  /* Flight-watcher card hover */
+  .watch-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+}
+
 /* Header (both index.html & wishlist.html use <nav> rather than .header-nav) */
 header {
   background: #4B34D1;
@@ -56,9 +108,6 @@ nav a {
   color: #ffffff;
   text-decoration: none;
   margin: 0 0.5rem;
-}
-nav a:hover {
-  text-decoration: underline;
 }
 
 /* ――― INDEX.HTML / WISHLIST.HTML CONTENT ――― */
@@ -85,9 +134,6 @@ nav a:hover {
   color: #333333;
   text-decoration: none;
   font-weight: 600;
-}
-.sidebar a:hover {
-  text-decoration: underline;
 }
 
 /* Main‐content (the right side on desktop, full width on mobile) */
@@ -120,9 +166,6 @@ nav a:hover {
   color: #ffffff;
   transition: background 0.3s;
 }
-#search-form button:hover {
-  background: #7A2F00;
-}
 
 /* Results Section: center a single country‐card on mobile */
 #results-section {
@@ -149,7 +192,6 @@ nav a:hover {
 }
 
 /* ――― COUNTRY CARD Styling (common to index.html & wishlist.html) ――― */
-/* 1) Card‐scale on hover (buttons remain static) */
 .country-card {
   position: relative;
   background: #ffffff;
@@ -159,15 +201,6 @@ nav a:hover {
   margin-bottom: 1rem;
   transition: transform 0.3s, box-shadow 0.3s;
   animation: fadeIn 0.5s ease-out;
-}
-.country-card:hover {
-  transform: scale(1.02);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
-/* 2) Button color‐fade on hover */
-button {
-  transition: background 0.3s;
 }
 
 /* “Add to Wishlist” – rectangular orange/brown */
@@ -181,9 +214,6 @@ button {
   display: block;
   margin-top: 1rem;
   margin-left: auto;
-}
-.add-btn:hover {
-  background: #7A2F00;
 }
 
 /* “Remove from Wishlist” – rectangular red */
@@ -199,9 +229,6 @@ button {
   display: block;
   margin-top: 1rem;
   margin-left: auto;
-}
-.remove-full-btn:hover {
-  background: #7a2727;
 }
 
 /* “×” on wishlist.html – small circular button */
@@ -221,9 +248,6 @@ button {
   cursor: pointer;
   transition: background 0.3s;
 }
-.remove-btn:hover {
-  background: #7a2727;
-}
 
 /* “Clear Wishlist” button (on wishlist.html) */
 #clear-wishlist-btn {
@@ -236,21 +260,12 @@ button {
   cursor: pointer;
   transition: background 0.3s;
 }
-#clear-wishlist-btn:hover {
-  background: #7a2727;
-}
 
-/* 3) Slightly desaturate flags by default; restore on card‐hover */
 .country-card img {
   width: 100%;
   border-radius: 4px;
   margin-bottom: 0.5rem;
-  filter: saturate(60%);
   transition: filter 0.3s, opacity 0.3s;
-}
-.country-card:hover img {
-  filter: saturate(100%);
-  opacity: 1;
 }
 
 .country-info {
@@ -289,7 +304,7 @@ button {
   position: relative;
 }
 
-/* 4) Fade‐in animation for cards */
+/* Fade‐in animation for cards */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -390,9 +405,6 @@ footer {
   cursor: pointer;
   transition: background 0.3s;
 }
-#add-watch-form button:hover {
-  background: #7A2F00;
-}
 
 /* Watches Container: grid of cards */
 #watches-container {
@@ -411,10 +423,6 @@ footer {
   transition: transform 0.3s, box-shadow 0.3s;
   animation: fadeIn 0.5s ease-out; /* Re‐use the same fadeIn keyframes */
 }
-.watch-card:hover {
-  transform: scale(1.02);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
 
 /* “Remove Watch” small circular button (top-right of each .watch-card) */
 .remove-watch-btn {
@@ -432,9 +440,6 @@ footer {
   line-height: 24px; /* center the “×” vertically */
   cursor: pointer;
   transition: background 0.3s;
-}
-.remove-watch-btn:hover {
-  background: #7a2727;
 }
 
 /* Watch Card Content */
