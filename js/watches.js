@@ -77,7 +77,7 @@ function appendToHistory(key, price) {
 }
 
 /**
- * Build and append a flight‐watch “card” to the page.
+ * Build and append a flight-watch “card” to the page.
  * Fetches the current price (one-way, round-trip, or flexible-range),
  * updates its localStorage history, and draws a sparkline.
  *
@@ -90,13 +90,16 @@ function appendToHistory(key, price) {
  *     windowDays: number,
  *     currency: string
  *   }
+ *
+ * @note windowDays applies only to outbound searches. If returnDate exists,
+ *       we perform a strict round-trip via getRoundTripPrice().
  */
 async function createWatchCard(watch) {
   const { origin, destination, departDate, returnDate, windowDays = 0, currency } = watch;
   const card = document.createElement('div');
   card.className = 'watch-card';
 
-  // 1) Remove Watch button (small × in top‐right)
+  // 1) Small “×” remove button
   const removeBtn = document.createElement('button');
   removeBtn.textContent = '×';
   removeBtn.className = 'remove-watch-btn';
@@ -108,42 +111,47 @@ async function createWatchCard(watch) {
   });
   card.appendChild(removeBtn);
 
-  // 2) Card Heading: origin→destination
+  // 2) Heading: JFK → LHR
   const heading = document.createElement('h3');
-  heading.textContent = `${origin.toUpperCase()} → ${destination.toUpperCase()}`;
+  heading.textContent = `${origin} → ${destination}`;
   card.appendChild(heading);
 
-  // 3) Date and currency info
-  const dateP = document.createElement('p');
-  dateP.textContent = `Depart: ${departDate}`;
-  card.appendChild(dateP);
+  // 3) Key details list
+  const infoList = document.createElement('ul');
+  infoList.className = 'watch-info';
+  [
+    [`Depart`, departDate],
+    returnDate && [`Return`, returnDate],
+    windowDays > 0 && [`Window`, `±${windowDays} days`],
+    [`Currency`, currency]
+  ].forEach(item => {
+    if (!item) return;
+    const li = document.createElement('li');
+    li.textContent = `${item[0]}: ${item[1]}`;
+    infoList.appendChild(li);
+  });
+  card.appendChild(infoList);
 
-  const currencyP = document.createElement('p');
-  currencyP.textContent = `Currency: ${currency.toUpperCase()}`;
-  card.appendChild(currencyP);
-
-  // 4) Current price (placeholder while fetching)
+  // 4) Price placeholder
   const priceP = document.createElement('p');
   priceP.className = 'watch-price';
-  priceP.textContent = 'Fetching price...';
+  priceP.textContent = 'Fetching price…';
   card.appendChild(priceP);
 
-  // 5) Canvas for Chart.js sparkline
+  // 5) Chart canvas
   const canvas = document.createElement('canvas');
   canvas.className = 'watch-chart';
-  // Build a unique canvas ID from all watch parameters so Chart.js targets the correct element
+  // give unique ID
   const idParts = [origin, destination, departDate];
   if (returnDate)  idParts.push('rt', returnDate);
   if (windowDays)  idParts.push('wd', windowDays);
-
-  const canvasId = `chart_${idParts.join('_')}`;
-  canvas.id = canvasId;
+  canvas.id = `chart_${idParts.join('_')}`;
   card.appendChild(canvas);
 
-  // 6) Append card to container, then fetch actual price
-  const container = document.getElementById('watches-container');
-  container.appendChild(card);
+  // finally add to DOM
+  document.getElementById('watches-container').appendChild(card);
 
+  // 6) Fetch price & draw sparkline + stats
   try {
     let price;
     if (returnDate) {
@@ -157,19 +165,24 @@ async function createWatchCard(watch) {
       priceP.textContent = `One-way: ${price.toFixed(2)} ${currency}`;
     }
 
-    const keyParts = [origin, destination, departDate];
-    if (returnDate)    keyParts.push('rt', returnDate);
-    if (windowDays)    keyParts.push('wd', windowDays);
-
-    const historyKey = `history-${keyParts.join('-')}`;
-
+    // update history
+    const historyKey = `history-${idParts.join('-')}`;
     const history = appendToHistory(historyKey, price);
 
+    // draw chart
     drawSparkline(canvas.id, history, currency);
-    card.style.animation = 'fadeIn 0.5s ease-out';
+
+    // display min/max below the chart
+    const statsP = document.createElement('p');
+    const min = Math.min(...history).toFixed(2);
+    const max = Math.max(...history).toFixed(2);
+    statsP.textContent = `Low: ${min}, High: ${max}`;
+    statsP.className = 'watch-stats';
+    card.appendChild(statsP);
+
   } catch (err) {
     priceP.textContent = 'Error fetching price';
-    console.error('Error in createWatchCard:', err);
+    console.error(err);
   }
 }
 

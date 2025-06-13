@@ -379,7 +379,7 @@ footer {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  align-items: flex-end;
+  align-items: flex-start;
   margin-bottom: 1.5rem;
 }
 #add-watch-form label {
@@ -408,6 +408,7 @@ footer {
   color: #fff;
   cursor: pointer;
   transition: background 0.3s;
+  margin-top: 1.85rem; /* aligns button with input fields */
 }
 
 /* Autocomplete styles for IATA inputs */
@@ -478,6 +479,18 @@ footer {
   margin-bottom: 0.25rem;
   font-size: 0.9rem;
 }
+
+.watch-info {
+  list-style: disc inside;
+  padding-left: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.watch-info li {
+  margin-bottom: 0.25rem;
+  font-size: 0.95rem;
+}
+
 .watch-price {
   font-size: 1.2rem;
   font-weight: bold;
